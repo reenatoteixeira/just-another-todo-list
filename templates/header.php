@@ -21,7 +21,7 @@
       <i class="min-[767px]:hidden uil uil-bars text-white text-3xl hover:cursor-pointer" id="navToggle"></i>
       <i class="min-[767px]:hidden uil uil-times text-white text-3xl hover:cursor-pointer hidden" id="navClose"></i>
 
-      <div class="max-[767px]:fixed max-[767px]:-top-full max-[767px]:left-0 max-[767px]:w-full max-[767px]:mt-16 max-[767px]:px-10 max-[767px]:py-1 max-[767px]:shadow-md max-[767px]:rounded-b-lg max-[767px]:bg-slate-700 max-[767px]:z-[-1]" id="navMenu">
+      <div class="max-[767px]:fixed max-[767px]:-top-full max-[767px]:left-0 max-[767px]:w-full max-[767px]:mt-16 max-[767px]:px-10 max-[767px]:py-1 max-[767px]:shadow-md max-[767px]:rounded-b-lg max-[767px]:bg-slate-700" id="navMenu">
         <ul class="min-[767px]:flex text-center">
           <li class="min-[767px]:mx-2 my-2">
             <a href="/" class="<?= checkUrl('/') ? 'text-white font-bold' : 'text-slate-300' ?> hover:text-slate-100">
@@ -43,4 +43,7 @@
         </ul>
       </div>
     </nav>
+
+    <?php require_once './templates/head.php' ?>
   </header>
+  <main class="mt-32">
