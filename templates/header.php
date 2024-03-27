@@ -1,3 +1,5 @@
+<?php require_once './config/functions.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,19 +23,19 @@
       <div class="max-[767px]:fixed max-[767px]:-top-full max-[767px]:left-0 max-[767px]:w-full max-[767px]:mt-16 max-[767px]:px-10 max-[767px]:py-1 max-[767px]:shadow-md max-[767px]:rounded-b-lg max-[767px]:bg-slate-700 max-[767px]:z-[-1]" id="navMenu">
         <ul class="min-[767px]:flex text-center">
           <li class="min-[767px]:mx-2 my-2">
-            <a href="/" class="text-slate-300 hover:text-slate-100">
+            <a href="/" class="<?= checkUrl('/') ? 'text-white font-bold' : 'text-slate-300' ?> hover:text-slate-100">
               <i class="uil uil-file"></i> To-do tasks
             </a>
           </li>
           <hr>
           <li class="min-[767px]:mx-2 my-2">
-            <a href="/done.php" class="text-slate-300 hover:text-slate-100">
+            <a href="/done.php" class="<?= checkUrl('/done.php') ? 'text-white font-bold' : 'text-slate-300' ?> hover:text-slate-100">
               <i class="uil uil-file-check"></i> Done tasks
             </a>
           </li>
           <hr>
           <li class="min-[767px]:mx-2 my-2">
-            <a href="/about.php" class="text-slate-300 hover:text-slate-100">
+            <a href="/about.php" class="<?= checkUrl('/about.php') ? 'text-white font-bold' : 'text-slate-300' ?> hover:text-slate-100">
               <i class="uil uil-question-circle"></i> About us
             </a>
           </li>
