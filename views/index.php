@@ -48,6 +48,8 @@
       <h3 class="font-mono text-xl font-bold mt-6">UNDER CONSTRUCTION</h3>
     </div>
   </main>
+
+  <script src="/assets/js/main.js"></script>
 </body>
 
 </html>
