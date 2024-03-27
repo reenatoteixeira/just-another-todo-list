@@ -15,6 +15,8 @@
       <a href="/" class="text-white font-bold text-3xl flex items-center">
         <img src="/assets/img/check.svg" alt="List icon" class="text-white h-12"> JATL
       </a>
+      <i class="uil uil-bars text-white text-3xl" id="navToggle"></i>
+      <i class="uil uil-times text-white text-3xl hidden" id="navClose"></i>
     </nav>
   </header>
 
