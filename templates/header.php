@@ -27,13 +27,13 @@
           </li>
           <hr>
           <li class="min-[767px]:mx-2 my-2">
-            <a href="/done" class="text-slate-300 hover:text-slate-100">
+            <a href="/done.php" class="text-slate-300 hover:text-slate-100">
               <i class="uil uil-file-check"></i> Done tasks
             </a>
           </li>
           <hr>
           <li class="min-[767px]:mx-2 my-2">
-            <a href="/" class="text-slate-300 hover:text-slate-100">
+            <a href="/about.php" class="text-slate-300 hover:text-slate-100">
               <i class="uil uil-question-circle"></i> About us
             </a>
           </li>

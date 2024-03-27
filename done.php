@@ -1,4 +1,4 @@
-<?php require_once './views/partials/header.php' ?>
+<?php require_once './templates/header.php' ?>
 
 <main>
   <div class="flex flex-col justify-center items-center h-screen text-center">
@@ -8,4 +8,4 @@
   </div>
 </main>
 
-<?php require_once './views/partials/footer.php' ?>
+<?php require_once './templates/footer.php' ?>
