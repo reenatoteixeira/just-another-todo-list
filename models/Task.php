@@ -47,3 +47,11 @@ class Task
     $this->isCompleted = $isCompleted;
   }
 }
+
+interface TaskInterface
+{
+  public function findAll();
+  public function create(Task $task);
+  public function update(Task $task);
+  public function delete(int $id);
+}
