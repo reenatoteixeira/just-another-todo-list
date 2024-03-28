@@ -1,6 +1,6 @@
 <?php
 $heading = 'To-do tasks';
-require_once './templates/header.php';
+require_once(__DIR__ . '/./templates/header.php');
 ?>
 
 <section class="max-w-5xl m-auto grid grid-cols-3 max-[767px]:grid-cols-1">
@@ -16,4 +16,4 @@ require_once './templates/header.php';
   </div>
 </section>
 
-<?php require_once './templates/footer.php' ?>
+<?php require_once(__DIR__ . '/./templates/footer.php'); ?>

@@ -1,4 +1,4 @@
-<?php require_once './config/functions.php' ?>
+<?php require_once(__DIR__ . '/../config/functions.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +44,6 @@
       </div>
     </nav>
 
-    <?php require_once './templates/head.php' ?>
+    <?php require_once(__DIR__ . '/./heading.php') ?>
   </header>
   <main class="mt-32">
