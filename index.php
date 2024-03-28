@@ -14,6 +14,12 @@ require_once(__DIR__ . '/./templates/header.php');
       <button class="bg-amber-300 hover:bg-amber-400 font-bold py-2 px-4 rounded"><i class="uil uil-trash-alt"></i></button>
     </div>
   </div>
+
+  <div class="fixed bottom-2 right-2">
+    <a href="/create.php">
+      <button class="bg-slate-900 hover:bg-slate-600 font-bold py-2 px-4 rounded text-white"><i class="uil uil-plus"></i> New task</button>
+    </a>
+  </div>
 </section>
 
 <?php require_once(__DIR__ . '/./templates/footer.php'); ?>
