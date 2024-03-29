@@ -12,4 +12,4 @@ $newTask->setTitle($taskTitle);
 $newTask->setDescription($taskDescription);
 
 $taskDAO->create($newTask);
-header('Location: ../index.php');
+header("Location: /");
