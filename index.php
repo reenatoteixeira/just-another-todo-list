@@ -10,8 +10,4 @@ $routes = [
   '/done' => './controllers/done.php',
 ];
 
-if (array_key_exists($uri, $routes)) {
-  require_once($routes[$uri]);
-} else {
-  abort();
-}
+routeToController($uri, $routes);
