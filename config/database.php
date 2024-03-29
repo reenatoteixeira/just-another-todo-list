@@ -1,9 +1,14 @@
 <?php
+require_once(__DIR__ . '/../vendor/autoload.php');
+
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/..');
+$dotenv->load();
+
 $config = [
-  'host' => 'cloud.reenatoteixeira.dev',
-  'database' => 'just-another-todo-list',
-  'username' => 'root',
-  'password' => 'f5c0f0cb1e256c3743f4',
+  'host' => getenv('DB_HOST'),
+  'database' => getenv('DB_DATABASE'),
+  'username' => getenv('DB_USERNAME'),
+  'password' => getenv('DB_PASSWORD'),
 ];
 
 $pdo = new PDO("mysql:host={$config['host']};dbname={$config['database']}", $config['username'], $config['password']);
