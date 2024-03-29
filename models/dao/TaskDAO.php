@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . '/../models/Task.php');
+require_once(__DIR__ . '/../Task.php');
 
 class TaskDAO implements TaskInterface
 {
