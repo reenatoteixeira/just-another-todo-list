@@ -1,5 +1,4 @@
 <?php
-$heading = 'To-do tasks';
 require_once(__DIR__ . '/config/database.php');
 require_once(__DIR__ . '/dao/TaskDAO.php');
 require_once(__DIR__ . '/templates/header.php');

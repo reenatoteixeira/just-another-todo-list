@@ -1,7 +1,4 @@
-<?php
-$heading = 'New task';
-require_once(__DIR__ . '/./templates/header.php');
-?>
+<?php require_once(__DIR__ . '/./templates/header.php'); ?>
 <section>
   <form action="/config/process.php" method="POST" class="max-[767px]:mx-4 max-w-2xl m-auto grid grid-cols-1 gap-4">
     <div>
