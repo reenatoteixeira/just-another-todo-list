@@ -12,9 +12,11 @@ class TaskDAO implements TaskInterface
 
   public function create(Task $task)
   {
+    $taskTitle = $task->getTitle();
+    $taskDescription = $task->getDescription();
     $stmt = $this->pdo->prepare("INSERT INTO tasks (title, description) VALUES (:title, :description)");
-    $stmt->bindParam(':title', $task->getTitle());
-    $stmt->bindParam(':description', $task->getDescription());
+    $stmt->bindParam(':title', $taskTitle);
+    $stmt->bindParam(':description', $taskDescription);
     $stmt->execute();
   }
 
