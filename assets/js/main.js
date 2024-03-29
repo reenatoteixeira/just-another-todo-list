@@ -23,8 +23,20 @@ function mobileMenuToggle() {
   }
 }
 
+function closeWarning() {
+  const warningMsg = document.getElementById("warning-msg"),
+    warningClose = document.getElementById("warning-close");
+  
+  if (warningMsg) {
+    warningClose.addEventListener("click", () => {
+      warningMsg.classList.add("hidden");
+    });
+  }
+}
+
 function main() {
   mobileMenuToggle();
+  closeWarning();
 }
 
 main();
