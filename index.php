@@ -13,5 +13,5 @@ $routes = [
 if (array_key_exists($uri, $routes)) {
   require_once($routes[$uri]);
 } else {
-  require_once('./controllers/404.php');
+  abort();
 }
