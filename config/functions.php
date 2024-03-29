@@ -10,3 +10,12 @@ function abort($code = 404)
   require_once(__DIR__ . "/../controllers/{$code}.php");
   die();
 }
+
+function routeToController($uri, $routes)
+{
+  if (array_key_exists($uri, $routes)) {
+    require_once($routes[$uri]);
+  } else {
+    abort();
+  }
+}
