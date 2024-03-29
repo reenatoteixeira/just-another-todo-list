@@ -13,11 +13,6 @@ $tasks = $taskDAO->read();
       <h2 class="font-bold"><?= $task->getTitle() ?></h2>
       <hr class="border-black my-2">
       <p><?= $task->getDescription() ?></p>
-      <div class="mt-2">
-        <button class="bg-amber-300 hover:bg-amber-400 font-bold py-2 px-4 rounded"><i class="uil uil-check-circle"></i></button>
-        <button class="bg-amber-300 hover:bg-amber-400 font-bold py-2 px-4 rounded"><i class="uil uil-edit"></i></button>
-        <button class="bg-amber-300 hover:bg-amber-400 font-bold py-2 px-4 rounded"><i class="uil uil-trash-alt"></i></button>
-      </div>
     </div>
   <?php endforeach; ?>
 
