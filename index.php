@@ -7,6 +7,9 @@ require_once(__DIR__ . '/templates/header.php');
 $taskDAO = new TaskDAO($pdo);
 $tasks = $taskDAO->read();
 ?>
+<div class="bg-red-500 text-white p-4 max-w-5xl m-auto ">
+  <p><strong>WARNING:</strong> Be aware that creating a new task will make it public to whoever has access to this website. There's no way to DELETE a created task yet. We're working on future improvements. Thanks!</p>
+</div>
 
 <section class="max-w-5xl m-auto grid grid-cols-3 max-[767px]:grid-cols-1">
   <?php foreach ($tasks as $task) : ?>
