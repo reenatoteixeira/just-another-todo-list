@@ -1,6 +1,6 @@
 <?php
 require_once(__DIR__ . '/../config/database.php');
-require_once(__DIR__ . '/../dao/TaskDAO.php');
+require_once(__DIR__ . '/../models/dao/TaskDAO.php');
 require_once(__DIR__ . '/partials/header.php');
 
 $taskDAO = new TaskDAO($pdo);
