@@ -1,9 +1,9 @@
 <?php
 $config = [
-  'host' => 'just-another-todo-list_stage-mysql',
+  'host' => 'cloud.reenatoteixeira.dev',
   'database' => 'just-another-todo-list',
-  'username' => 'mysql',
-  'password' => '9425c7846d2f4a00b4e4',
+  'username' => 'root',
+  'password' => 'f5c0f0cb1e256c3743f4',
 ];
 
 $pdo = new PDO("mysql:host={$config['host']};dbname={$config['database']}", $config['username'], $config['password']);
