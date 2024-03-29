@@ -23,9 +23,9 @@ class TaskDAO implements TaskInterface
   public function read()
   {
     $tasks = [];
-    $stmt = $this->pdo->query("SELECT * FROM tasks");
+    $stmt = $this->pdo->query("SELECT * FROM tasks ORDER BY id DESC");
     $data = $stmt->fetchAll();
-
+    // ...
     foreach ($data as $taskData) {
       $task = new Task();
       $task->setTitle($taskData['title']);
