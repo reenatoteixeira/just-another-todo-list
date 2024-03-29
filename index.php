@@ -10,6 +10,8 @@ $routes = [
   '/done' => './controllers/done.php',
 ];
 
-if ($uri === '/') {
-  require_once(__DIR__ . '/./controllers/home.php');
+if (array_key_exists($uri, $routes)) {
+  require_once($routes[$uri]);
+} else {
+  require_once('./controllers/404.php');
 }
