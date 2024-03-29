@@ -42,6 +42,6 @@
       </div>
     </nav>
 
-    <?php require_once(__DIR__ . '/./heading.php') ?>
+    <?php require_once(__DIR__ . '/heading.php') ?>
   </header>
   <main class="mt-32">

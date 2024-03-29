@@ -1,7 +1,7 @@
 <?php
-require_once(__DIR__ . '/config/database.php');
-require_once(__DIR__ . '/dao/TaskDAO.php');
-require_once(__DIR__ . '/templates/header.php');
+require_once(__DIR__ . '/../config/database.php');
+require_once(__DIR__ . '/../dao/TaskDAO.php');
+require_once(__DIR__ . '/partials/header.php');
 
 $taskDAO = new TaskDAO($pdo);
 $tasks = $taskDAO->read();
@@ -31,4 +31,4 @@ $tasks = $taskDAO->read();
   </div>
 </section>
 
-<?php require_once(__DIR__ . '/./templates/footer.php'); ?>
+<?php require_once(__DIR__ . '/partials/footer.php'); ?>
