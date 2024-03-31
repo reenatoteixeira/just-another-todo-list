@@ -34,6 +34,11 @@ function closeWarning() {
   }
 }
 
+function showNewTaskModal() {
+  const createTaskModal = document.getElementById("create-task-modal");
+  createTaskModal.showModal();
+}
+
 function main() {
   mobileMenuToggle();
   closeWarning();
