@@ -39,6 +39,11 @@ function openNewTaskModal() {
   newTaskModal.showModal();
 }
 
+function closeNewTaskModal() {
+  const newTaskModal = document.getElementById("create-task-modal");
+  newTaskModal.close();
+}
+
 function closeNewTaskModalOnClick() {
   const newTaskModal = document.getElementById("create-task-modal");
   newTaskModal.addEventListener("click", e => {
