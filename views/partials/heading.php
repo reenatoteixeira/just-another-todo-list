@@ -6,7 +6,7 @@
     <?php if($heading === 'To-do tasks') : ?>
       <div class="fixed bottom-2 right-4 sm:static">
         <a href="/create">
-          <button class="bg-indigo-600 hover:bg-indigo-500 font-semibold py-2 px-4 rounded-lg text-white">
+          <button type="button" class="bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm rounded-md hover:bg-indigo-500 md:text-base">
             <i class="uil uil-plus"></i> New task
           </button>
         </a>
