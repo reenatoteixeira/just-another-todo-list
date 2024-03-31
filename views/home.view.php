@@ -15,14 +15,6 @@ $tasks = $taskDAO->read();
       <p><?= $task->getDescription() ?></p>
     </div>
   <?php endforeach; ?>
-
-  <div class="fixed bottom-2 right-2">
-    <a href="/create">
-      <button class="bg-indigo-600 hover:bg-indigo-500 font-semibold py-2 px-4 rounded-lg text-white">
-        <i class="uil uil-plus"></i> New task
-      </button>
-    </a>
-  </div>
 </section>
 
 <?php require_once(__DIR__ . '/partials/footer.php'); ?>
