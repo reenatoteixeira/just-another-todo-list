@@ -7,10 +7,10 @@ $taskDAO = new TaskDAO($pdo);
 $tasks = $taskDAO->read();
 ?>
 
-<div class="flex bg-red-100 text-red-800 rounded-lg p-4 m-2" id="warning-msg">
+<div class="flex bg-red-100	text-red-800 rounded-lg p-4 m-2" id="warning-msg">
   <div class="mr-4">
-    <h2><strong>WARNING!</strong></h2>
-    <p>This is a test environment. Be aware that creating a new task will make it public to whoever has access to this website. There's no way to DELETE a created task yet. We're working on future improvements, <a href="https://github.com/reenatoteixeira/just-another-todo-list/tree/stage" class="underline">click here</a> to check our GitHub repository. Thanks!</p>
+    <h2><i class="uil uil-exclamation-triangle"></i> <strong>WARNING</strong></h2>
+    <p>This is a test environment. Be aware that creating a new task will make it public to whoever has access to this website. There's no way to DELETE a created task yet. We're working on future improvements, <a href="https://github.com/reenatoteixeira/just-another-todo-list/tree/stage" target="_blank" class="underline">click here</a> to check our GitHub repository. Thanks!</p>
   </div>
   <i class="uil uil-times text-xl hover:cursor-pointer" id="warning-close"></i>
 </div>
