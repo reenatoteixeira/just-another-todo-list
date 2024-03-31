@@ -3,13 +3,11 @@
     <div>
       <h1 class="text-3xl font-bold tracking-tight text-gray-900"><?= $heading ?></h1>
     </div>
-    <?php if($heading === 'To-do tasks') : ?>
+    <?php if ($heading === 'To-do tasks') : ?>
       <div class="fixed bottom-2 right-4 sm:static">
-        <a href="/create">
-          <button type="button" class="bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm rounded-md hover:bg-indigo-500 md:text-base">
-            <i class="uil uil-plus"></i> New task
-          </button>
-        </a>
+        <button type="button" onclick="showNewTaskModal()" class="bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm rounded-md hover:bg-indigo-500 md:text-base">
+          <i class="uil uil-plus"></i> New task
+        </button>
       </div>
     <?php endif; ?>
   </div>
