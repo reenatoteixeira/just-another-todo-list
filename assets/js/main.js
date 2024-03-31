@@ -35,8 +35,8 @@ function closeWarning() {
 }
 
 function openNewTaskModal() {
-  const createTaskModal = document.getElementById("create-task-modal");
-  createTaskModal.showModal();
+  const newTaskModal = document.getElementById("create-task-modal");
+  newTaskModal.showModal();
 }
 
 function closeNewTaskModalOnClick() {
