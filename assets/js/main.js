@@ -39,9 +39,25 @@ function openNewTaskModal() {
   createTaskModal.showModal();
 }
 
+function closeNewTaskModalOnClick() {
+  const newTaskModal = document.getElementById("create-task-modal");
+  newTaskModal.addEventListener("click", e => {
+    const dialogDimensions = newTaskModal.getBoundingClientRect()
+    if (
+      e.clientX < dialogDimensions.left ||
+      e.clientX > dialogDimensions.right ||
+      e.clientY < dialogDimensions.top ||
+      e.clientY > dialogDimensions.bottom
+    ) {
+      newTaskModal.close()
+    }
+  })
+}
+
 function main() {
   mobileMenuToggle();
   closeWarning();
+  closeNewTaskModalOnClick();
 }
 
 main();
