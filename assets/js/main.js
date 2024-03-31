@@ -34,7 +34,7 @@ function closeWarning() {
   }
 }
 
-function showNewTaskModal() {
+function openNewTaskModal() {
   const createTaskModal = document.getElementById("create-task-modal");
   createTaskModal.showModal();
 }
