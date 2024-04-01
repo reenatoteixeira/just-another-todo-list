@@ -39,6 +39,7 @@ $tasks = $taskDAO->read();
 
   <dialog id="create-task-modal" class="w-11/12 max-w-lg rounded-lg backdrop:bg-black/60">
     <form action="/config/process.php" method="POST">
+      <input type="hidden" name="type" value="create">
       <div class="px-4 mt-2">
         <label for="title" class="block text-sm font-medium leading-6 text-gray-900 md:text-base">Title</label>
         <input type="text" name="title" id="title" maxlength="125" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-base" required>
