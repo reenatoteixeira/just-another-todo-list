@@ -41,6 +41,12 @@ class TaskDAO implements TaskInterface
 
   public function update(Task $task)
   {
+    $stmt = $this->pdo->prepare("UPDATE tasks SET title = :title, description = :description, completed = :completed WHERE id = :id");
+    $stmt->bindParam(':title', $task->getTitle());
+    $stmt->bindParam(':description', $task->getDescription());
+    $stmt->bindParam(':completed', $task->getCompleted());
+    $stmt->bindParam(':id', $task->getID());
+    $stmt->execute();
   }
 
   public function delete($id)
