@@ -24,13 +24,10 @@ function mobileMenuToggle() {
 }
 
 function closeWarning() {
-  const warningMsg = document.getElementById("warning-msg"),
-    warningClose = document.getElementById("warning-close");
-  
+  const warningMsg = document.getElementById("warning-msg");
+
   if (warningMsg) {
-    warningClose.addEventListener("click", () => {
-      warningMsg.classList.add("hidden");
-    });
+    warningMsg.classList.add("hidden");
   }
 }
 
@@ -46,22 +43,21 @@ function closeNewTaskModal() {
 
 function closeNewTaskModalOnClick() {
   const newTaskModal = document.getElementById("create-task-modal");
-  newTaskModal.addEventListener("click", e => {
-    const dialogDimensions = newTaskModal.getBoundingClientRect()
+  newTaskModal.addEventListener("click", (e) => {
+    const dialogDimensions = newTaskModal.getBoundingClientRect();
     if (
       e.clientX < dialogDimensions.left ||
       e.clientX > dialogDimensions.right ||
       e.clientY < dialogDimensions.top ||
       e.clientY > dialogDimensions.bottom
     ) {
-      newTaskModal.close()
+      newTaskModal.close();
     }
-  })
+  });
 }
 
 function main() {
   mobileMenuToggle();
-  closeWarning();
   closeNewTaskModalOnClick();
 }
 
