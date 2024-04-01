@@ -37,7 +37,7 @@ $tasks = $taskDAO->read();
     </div>
   <?php endforeach; ?>
 
-  <dialog id="create-task-modal" class="w-11/12 max-w-lg rounded-lg">
+  <dialog id="create-task-modal" class="w-11/12 max-w-lg rounded-lg backdrop:bg-black/60">
     <form action="/config/process.php" method="POST">
       <div class="px-4 mt-2">
         <label for="title" class="block text-sm font-medium leading-6 text-gray-900 md:text-base">Title</label>
