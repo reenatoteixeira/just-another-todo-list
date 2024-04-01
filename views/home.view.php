@@ -15,6 +15,18 @@ $tasks = $taskDAO->read();
   <i class="uil uil-times text-xl hover:cursor-pointer" id="warning-close"></i>
 </div>
 
+<?php if (count($tasks) === 0) : ?>
+  <section class="flex items-center justify-center">
+    <div class="border-gray-300 border-2 rounded-lg border-dashed w-full p-32">
+      <div class="m-auto col-span-3 flex flex-col items-center justify-center">
+        <i class="uil uil-file-plus text-4xl text-gray-400"></i>
+        <h3 class="font-semibold">No tasks</h3>
+        <p class="text-gray-400">Get started by creating a new task.</p>
+      </div>
+    </div>
+  </section>
+<?php endif; ?>
+
 <section class="m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
   <?php foreach ($tasks as $task) : ?>
     <div class="bg-amber-200 p-4 shadow-md overflow-hidden">
