@@ -17,8 +17,8 @@
         <div class="flex h-16 items-center justify-between">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <a href="/" class="flex items-center text-white font-bold md:text-lg">
-                <img class="h-8 w-8 md:h-10 md:w-10" src="/assets/img/check.svg" alt="JATL logo"> JATL
+              <a href="/" class="flex items-center text-white font-bold sm:text-lg">
+                <img class="h-8 w-8 sm:h-10 sm:w-10" src="/assets/img/check.svg" alt="JATL logo"> JATL
               </a>
             </div>
             <div class="hidden md:block">
