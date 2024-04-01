@@ -29,9 +29,9 @@ $tasks = $taskDAO->read();
 
 <section class="m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
   <?php foreach ($tasks as $task) : ?>
-    <div class="bg-amber-200 p-4 shadow-md overflow-hidden">
+    <div class="bg-amber-200 p-4 shadow-lg rounded-lg overflow-hidden">
       <h2 class="font-bold"><?= $task->getTitle() ?></h2>
-      <hr class="border-black my-2">
+      <hr class="border-amber-300 my-2">
       <p><?= $task->getDescription() ?></p>
     </div>
   <?php endforeach; ?>
