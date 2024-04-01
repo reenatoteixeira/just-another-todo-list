@@ -17,7 +17,7 @@ $tasks = $taskDAO->read();
 
 <?php if (count($tasks) === 0) : ?>
   <section class="flex items-center justify-center">
-    <div class="border-gray-300 border-2 rounded-lg border-dashed w-full p-32">
+    <div class="border-gray-300 border-2 rounded-lg border-dashed w-full py-32 px-4">
       <div class="m-auto col-span-3 flex flex-col items-center justify-center">
         <i class="uil uil-file-plus text-4xl text-gray-400"></i>
         <h3 class="font-semibold">No tasks</h3>
