@@ -17,5 +17,9 @@ if (!empty($data)) {
     $taskDAO->create($newTask);
     header("Location: /");
 
+  } else if ($data['type'] === 'delete') {
+    $taskId = $data['id'];
+    $taskDAO->delete($taskId);
+    header("Location: /");
   }
 }
