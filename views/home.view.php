@@ -32,42 +32,48 @@ $tasks = $taskDAO->read();
 
 <section class="m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
   <?php foreach ($tasks as $task) : ?>
-    <div class="bg-amber-200 shadow-lg rounded-lg overflow-hidden">
+    <div class="bg-amber-200 shadow-lg rounded-lg flex flex-col justify-between">
       <div class="p-4">
-        <h2 class="font-bold"><?= $task->getTitle() ?></h2>
-        <hr class="border-amber-300 my-2">
-        <p><?= $task->getDescription() ?></p>
+        <div>
+          <h2 class="font-bold"><?= $task->getTitle() ?></h2>
+        </div>
+        <?php if (!empty($task->getDescription())) : ?>
+          <hr class="border-amber-300 my-2">
+          <p><?= $task->getDescription() ?></p>
+        <?php endif; ?>
       </div>
 
-      <div class="bg-amber-300 p-2 flex justify-between">
-        <div>
-          <form action="/config/process.php" method="post">
-            <input type="hidden" name="type" value="complete">
-            <input type="hidden" name="id" value="<?= $task->getID() ?>">
-            <input type="hidden" name="complete" value="1">
-            <button disabled type="submit" class="rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 disabled:bg-amber-500 disabled:text-amber-200">
-              <i class="uil uil-check-circle"></i>
-              <span class="font-semibold">Mark as done</span>
-            </button>
-          </form>
-        </div>
+      <div class="bg-amber-300 p-2 rounded-b-lg">
+        <div class="flex justify-between">
+          <div>
+            <form action="/config/process.php" method="post">
+              <input type="hidden" name="type" value="complete">
+              <input type="hidden" name="id" value="<?= $task->getID() ?>">
+              <input type="hidden" name="complete" value="1">
+              <button disabled type="submit" class="rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 disabled:bg-amber-500 disabled:text-amber-200">
+                <i class="uil uil-check-circle"></i>
+                <span class="font-semibold">Mark as done</span>
+              </button>
+            </form>
+          </div>
 
-        <div class="flex">
-          <form action="/config/process.php" method="post">
-            <input type="hidden" name="type" value="edit">
-            <input type="hidden" name="id" value="<?= $task->getID() ?>">
-            <button disabled type="submit" class="ml-2 rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 disabled:bg-amber-500 disabled:text-amber-200">
-              <i class="uil uil-edit"></i>
-            </button>
-          </form>
+          <div class="flex">
+            <form action="/config/process.php" method="post">
+              <input type="hidden" name="type" value="edit">
+              <input type="hidden" name="id" value="<?= $task->getID() ?>">
+              <button disabled type="submit" class="ml-2 rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 disabled:bg-amber-500 disabled:text-amber-200">
+                <i class="uil uil-edit"></i>
+              </button>
+            </form>
 
-          <form action="/config/process.php" method="post">
-            <input type="hidden" name="type" value="delete">
-            <input type="hidden" name="id" value="<?= $task->getID() ?>">
-            <button type="submit" class="ml-2 rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 disabled:bg-amber-500 disabled:text-amber-200">
-              <i class="uil uil-trash-alt"></i>
-            </button>
-          </form>
+            <form action="/config/process.php" method="post">
+              <input type="hidden" name="type" value="delete">
+              <input type="hidden" name="id" value="<?= $task->getID() ?>">
+              <button type="submit" class="ml-2 rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 disabled:bg-amber-500 disabled:text-amber-200">
+                <i class="uil uil-trash-alt"></i>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
