@@ -34,6 +34,15 @@ $tasks = $taskDAO->read();
       <h2 class="font-bold"><?= $task->getTitle() ?></h2>
       <hr class="border-amber-300 my-2">
       <p><?= $task->getDescription() ?></p>
+      <div>
+        <form action="/config/process.php" method="post">
+          <input type="hidden" name="type" value="delete">
+          <input type="hidden" name="id" value="<?= $task->getID() ?>">
+          <button type="submit" class="mt-3 inline-flex justify-center rounded-md bg-amber-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-amber-500 sm:text-base">
+            Delete
+          </button>
+        </form>
+      </div>
     </div>
   <?php endforeach; ?>
 
