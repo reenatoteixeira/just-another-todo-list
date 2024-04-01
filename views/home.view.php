@@ -45,9 +45,9 @@ $tasks = $taskDAO->read();
             <input type="hidden" name="type" value="complete">
             <input type="hidden" name="id" value="<?= $task->getID() ?>">
             <input type="hidden" name="complete" value="1">
-            <button disabled type="submit" class="inline-flex w-full justify-center rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 sm:w-auto disabled:bg-amber-500 disabled:text-amber-200">
+            <button disabled type="submit" class="rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 disabled:bg-amber-500 disabled:text-amber-200">
               <i class="uil uil-check-circle"></i>
-              <span class="ml-1 font-semibold">Mark as done</span>
+              <span class="font-semibold">Mark as done</span>
             </button>
           </form>
         </div>
@@ -56,7 +56,7 @@ $tasks = $taskDAO->read();
           <form action="/config/process.php" method="post">
             <input type="hidden" name="type" value="edit">
             <input type="hidden" name="id" value="<?= $task->getID() ?>">
-            <button disabled type="submit" class="ml-2 inline-flex w-full justify-center rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 sm:w-auto disabled:bg-amber-500 disabled:text-amber-200">
+            <button disabled type="submit" class="ml-2 rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 disabled:bg-amber-500 disabled:text-amber-200">
               <i class="uil uil-edit"></i>
             </button>
           </form>
@@ -64,7 +64,7 @@ $tasks = $taskDAO->read();
           <form action="/config/process.php" method="post">
             <input type="hidden" name="type" value="delete">
             <input type="hidden" name="id" value="<?= $task->getID() ?>">
-            <button type="submit" class="ml-2 inline-flex w-full justify-center rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 sm:w-auto disabled:bg-amber-500 disabled:text-amber-200">
+            <button type="submit" class="ml-2 rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 disabled:bg-amber-500 disabled:text-amber-200">
               <i class="uil uil-trash-alt"></i>
             </button>
           </form>
