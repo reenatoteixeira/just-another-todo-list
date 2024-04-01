@@ -10,7 +10,9 @@ $tasks = $taskDAO->read();
 <div class="flex flex-col bg-red-100 text-red-800 rounded-lg p-4 mb-4 text-sm sm:text-base" id="warning-msg">
   <div class="flex items-center justify-between">
     <h2><i class="uil uil-exclamation-triangle"></i> <strong>WARNING</strong></h2>
-    <i class="uil uil-times text-xl hover:cursor-pointer" id="warning-close"></i>
+    <button onclick="closeWarning()">
+      <i class="uil uil-times text-xl"></i>
+    </button>
   </div>
   <hr class="border-red-200 my-2 w-full">
   <p>This is a test environment. Be aware that creating a task will make it public to anyone with access to this site. It's currently possible to delete any task (including other people's) by clicking on "Delete", so use it wisely. We're working on other improvements, <a href="https://github.com/reenatoteixeira/just-another-todo-list/tree/stage" target="_blank" class="underline">click here</a> to check our GitHub repository. Thanks!</p>
