@@ -13,5 +13,5 @@
   </div>
 </header>
 
-<main class="pt-36">
+<main class="pt-40">
   <div class="mx-auto max-w-7xl py-4 px-4 sm:px-6 lg:px-8">
