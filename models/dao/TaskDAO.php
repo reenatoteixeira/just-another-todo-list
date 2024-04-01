@@ -28,6 +28,7 @@ class TaskDAO implements TaskInterface
     // ...
     foreach ($data as $taskData) {
       $task = new Task();
+      $task->setId($taskData['id']);
       $task->setTitle($taskData['title']);
       $task->setDescription($taskData['description']);
       $tasks[] = $task;
