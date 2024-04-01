@@ -32,18 +32,43 @@ $tasks = $taskDAO->read();
 
 <section class="m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
   <?php foreach ($tasks as $task) : ?>
-    <div class="bg-amber-200 p-4 shadow-lg rounded-lg overflow-hidden">
-      <h2 class="font-bold"><?= $task->getTitle() ?></h2>
-      <hr class="border-amber-300 my-2">
-      <p><?= $task->getDescription() ?></p>
-      <div>
-        <form action="/config/process.php" method="post">
-          <input type="hidden" name="type" value="delete">
-          <input type="hidden" name="id" value="<?= $task->getID() ?>">
-          <button type="submit" class="mt-3 inline-flex justify-center rounded-md bg-amber-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-amber-500 sm:text-base">
-            Delete
-          </button>
-        </form>
+    <div class="bg-amber-200 shadow-lg rounded-lg overflow-hidden">
+      <div class="p-4">
+        <h2 class="font-bold"><?= $task->getTitle() ?></h2>
+        <hr class="border-amber-300 my-2">
+        <p><?= $task->getDescription() ?></p>
+      </div>
+
+      <div class="bg-amber-300 p-2 flex justify-between">
+        <div>
+          <form action="/config/process.php" method="post">
+            <input type="hidden" name="type" value="complete">
+            <input type="hidden" name="id" value="<?= $task->getID() ?>">
+            <input type="hidden" name="complete" value="1">
+            <button disabled type="submit" class="inline-flex w-full justify-center rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 sm:w-auto disabled:bg-amber-500 disabled:text-amber-200">
+              <i class="uil uil-check-circle"></i>
+              <span class="ml-1 font-semibold">Mark as done</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="flex">
+          <form action="/config/process.php" method="post">
+            <input type="hidden" name="type" value="edit">
+            <input type="hidden" name="id" value="<?= $task->getID() ?>">
+            <button disabled type="submit" class="ml-2 inline-flex w-full justify-center rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 sm:w-auto disabled:bg-amber-500 disabled:text-amber-200">
+              <i class="uil uil-edit"></i>
+            </button>
+          </form>
+
+          <form action="/config/process.php" method="post">
+            <input type="hidden" name="type" value="delete">
+            <input type="hidden" name="id" value="<?= $task->getID() ?>">
+            <button type="submit" class="ml-2 inline-flex w-full justify-center rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 sm:w-auto disabled:bg-amber-500 disabled:text-amber-200">
+              <i class="uil uil-trash-alt"></i>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   <?php endforeach; ?>
