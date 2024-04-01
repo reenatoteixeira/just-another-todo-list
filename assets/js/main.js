@@ -12,10 +12,8 @@ function mobileMenuToggle() {
 
 function closeWarning() {
   const warningMsg = document.getElementById("warning-msg");
-
-  if (warningMsg) {
-    warningMsg.classList.add("hidden");
-  }
+  
+  warningMsg.classList.add("hidden");
 }
 
 function openNewTaskModal() {
