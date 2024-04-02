@@ -21,5 +21,14 @@ if (!empty($data)) {
     $taskId = $data['id'];
     $taskDAO->delete($taskId);
     header("Location: /");
+    
+  } else if ($data['type'] === 'complete') {
+    $completedTask = new Task();
+    $completedTask->setID($data['id']);
+    $completedTask->setTitle($data['title']);
+    $completedTask->setDescription($data['description']);
+    $completedTask->setCompleted($data['complete']);
+    $taskDAO->update($completedTask);
+    header("Location: /");
   }
 }
