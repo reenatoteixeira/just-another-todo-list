@@ -53,10 +53,13 @@ class TaskDAO implements TaskInterface
     $stmt->execute();
   }
 
-  public function delete($id)
+  public function delete(Task $task)
   {
-    $stmt = $this->pdo->prepare("DELETE FROM tasks WHERE id = :id");
-    $stmt->bindParam(':id', $id);
+    $taskId = $task->getID();
+    $taskDeleted = $task->getDeleted();
+    $stmt = $this->pdo->prepare("UPDATE tasks SET deleted = :deleted WHERE id = :id");
+    $stmt->bindParam(':id', $taskId);
+    $stmt->bindParam(':deleted', $taskDeleted);
     $stmt->execute();
   }
 }

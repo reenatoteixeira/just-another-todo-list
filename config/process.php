@@ -18,8 +18,10 @@ if (!empty($data)) {
     header("Location: /");
 
   } else if ($data['type'] === 'delete') {
-    $taskId = $data['id'];
-    $taskDAO->delete($taskId);
+    $deletedTask = new Task();
+    $deletedTask->setID($data['id']);
+    $deletedTask->setDeleted($data['deleted']);
+    $taskDAO->delete($deletedTask);
     header("Location: /");
     
   } else if ($data['type'] === 'complete') {

@@ -63,5 +63,5 @@ interface TaskInterface
   public function create(Task $task);
   public function read($state);
   public function update(Task $task);
-  public function delete($id);
+  public function delete(Task $task);
 }
