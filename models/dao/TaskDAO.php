@@ -20,11 +20,12 @@ class TaskDAO implements TaskInterface
     $stmt->execute();
   }
 
-  public function read($state)
+  public function read($completed, $deleted)
   {
     $tasks = [];
-    $stmt = $this->pdo->prepare("SELECT * FROM tasks WHERE completed = :state ORDER BY id DESC");
-    $stmt->bindParam(':state', $state);
+    $stmt = $this->pdo->prepare("SELECT * FROM tasks WHERE completed = :completed AND deleted = :deleted ORDER BY id DESC");
+    $stmt->bindParam(':completed', $completed);
+    $stmt->bindParam(':deleted', $deleted);
     $stmt->execute();
     $data = $stmt->fetchAll();
 

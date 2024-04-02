@@ -61,7 +61,7 @@ class Task
 interface TaskInterface
 {
   public function create(Task $task);
-  public function read($state);
+  public function read($completed, $deleted);
   public function update(Task $task);
   public function delete(Task $task);
 }

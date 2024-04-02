@@ -4,7 +4,7 @@ require_once(__DIR__ . '/../models/dao/TaskDAO.php');
 require_once(__DIR__ . '/partials/header.php');
 
 $taskDAO = new TaskDAO($pdo);
-$tasks = $taskDAO->read(1);
+$tasks = $taskDAO->read(1, 0);
 ?>
 
 <div class="flex flex-col bg-red-100 text-red-800 rounded-lg p-4 mb-4 text-sm sm:text-base" id="warning-msg">
