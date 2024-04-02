@@ -5,6 +5,7 @@ class Task
   private $title;
   private $description;
   private $completed;
+  private $deleted;
 
   public function getID()
   {
@@ -44,6 +45,16 @@ class Task
   public function setCompleted($completed)
   {
     $this->completed = $completed;
+  }
+
+  public function getDeleted()
+  {
+    return $this->deleted;
+  }
+
+  public function setDeleted($deleted)
+  {
+    $this->deleted = $deleted;
   }
 }
 
