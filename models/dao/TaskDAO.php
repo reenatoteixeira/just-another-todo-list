@@ -42,19 +42,15 @@ class TaskDAO implements TaskInterface
     return $tasks;
   }
 
-  public function update(Task $task): void
+  public function edit(Task $task): void
   {
     $taskId = $task->getID();
     $taskTitle = $task->getTitle();
     $taskDescription = $task->getDescription();
-    $taskCompleted = $task->getCompleted();
-    $taskDeleted = $task->getDeleted();
-    $stmt = $this->pdo->prepare("UPDATE tasks SET title = :title, description = :description, completed = :completed, deleted = :deleted WHERE id = :id");
+    $stmt = $this->pdo->prepare("UPDATE tasks SET title = :title, description = :description WHERE id = :id");
     $stmt->bindParam(':title', $taskTitle);
     $stmt->bindParam(':description', $taskDescription);
-    $stmt->bindParam(':completed', $taskCompleted);
     $stmt->bindParam(':id', $taskId);
-    $stmt->bindParam(':deleted', $taskDeleted);
     $stmt->execute();
   }
 
@@ -65,6 +61,16 @@ class TaskDAO implements TaskInterface
     $stmt = $this->pdo->prepare("UPDATE tasks SET deleted = :deleted WHERE id = :id");
     $stmt->bindParam(':id', $taskId);
     $stmt->bindParam(':deleted', $taskDeleted);
+    $stmt->execute();
+  }
+
+  public function complete(Task $task): void
+  {
+    $taskId = $task->getID();
+    $taskCompleted = $task->getCompleted();
+    $stmt = $this->pdo->prepare("UPDATE tasks SET completed = :completed WHERE id = :id");
+    $stmt->bindParam(':id', $taskId);
+    $stmt->bindParam(':completed', $taskCompleted);
     $stmt->execute();
   }
 }
