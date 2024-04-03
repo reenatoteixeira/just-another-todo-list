@@ -17,14 +17,16 @@
 
   <form action="/config/process.php" method="POST">
     <input type="hidden" name="type" value="edit">
+    <input type="hidden" name="id" id="edit-id">
+
     <div class="px-4 mt-2">
       <label for="title" class="block text-sm font-medium leading-6 text-gray-900 md:text-base">Title</label>
-      <input type="text" name="title" id="title" maxlength="125" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-base" required>
+      <input type="text" name="title" id="edit-title" maxlength="125" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-base" required>
     </div>
 
     <div class="px-4 mt-2 mb-4">
       <label for="description" class="block text-sm font-medium leading-6 text-gray-900 md:text-base">Description</label>
-      <textarea name="description" id="description" rows="4" maxlength="255" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 text-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-base resize-none"></textarea>
+      <textarea name="description" id="edit-description" rows="4" maxlength="255" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 text-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-base resize-none"></textarea>
     </div>
 
     <div class="bg-gray-50 px-4 rounded-b-lg">
