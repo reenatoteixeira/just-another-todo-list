@@ -22,8 +22,14 @@ if (!empty($data)) {
     $deletedTask->setID($data['id']);
     $deletedTask->setDeleted($data['deleted']);
     $taskDAO->delete($deletedTask);
-    header("Location: /");
-    
+    $actualPage = $data['heading'];
+
+    if ($actualPage === 'To-do tasks') {
+      header("Location: /");
+    } else if ($actualPage === 'Done tasks') {
+      header("Location: /done");
+    }
+
   } else if ($data['type'] === 'complete') {
     $completedTask = new Task();
     $completedTask->setID($data['id']);
