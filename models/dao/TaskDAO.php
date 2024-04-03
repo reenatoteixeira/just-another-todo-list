@@ -34,6 +34,8 @@ class TaskDAO implements TaskInterface
       $task->setId($taskData['id']);
       $task->setTitle($taskData['title']);
       $task->setDescription($taskData['description']);
+      $task->setCompleted($taskData['completed']);
+      $task->setDeleted($taskData['deleted']);
       $tasks[] = $task;
     }
 
