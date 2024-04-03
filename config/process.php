@@ -32,6 +32,7 @@ if (!empty($data)) {
     $completedTask->setTitle($data['title']);
     $completedTask->setDescription($data['description']);
     $completedTask->setCompleted($data['complete']);
+    $completedTask->setDeleted(0);
     $taskDAO->update($completedTask);
     header("Location: /");
   }
