@@ -32,8 +32,8 @@ if (!empty($data)) {
   } else if ($data['type'] === 'complete') {
     $completedTask = new Task();
     $completedTask->setID($data['id']);
-    $completedTask->setCompleted($data['complete']);
-    
+    $completedTask->setCompleted($data['completed']);
+
     $taskDAO->complete($completedTask);
     header("Location: /");
   }
