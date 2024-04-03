@@ -1,6 +1,6 @@
 <dialog id="create-task-modal" class="w-11/12 max-w-lg rounded-lg backdrop:bg-black/60">
-  <div class="bg-gray-50 px-4 pb-4">
-    <div class="flex items-center justify-between  mt-2">
+  <div class="bg-gray-50 px-4 pb-4 pt-2">
+    <div class="flex items-center justify-between">
       <h2 class="text-lg font-semibold">Create a new task</h2>
       <button onclick="closeNewTaskModal()">
         <i class="uil uil-times text-xl"></i>
