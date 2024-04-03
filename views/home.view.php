@@ -7,15 +7,30 @@ $taskDAO = new TaskDAO($pdo);
 $tasks = $taskDAO->read(0, 0);
 ?>
 
-<div class="flex flex-col bg-red-100 text-red-800 rounded-lg p-4 mb-4 text-sm sm:text-base" id="warning-msg">
-  <div class="flex items-center justify-between">
-    <h2><i class="uil uil-exclamation-triangle"></i> <strong>WARNING</strong></h2>
+<div class="flex flex-col bg-blue-50 text-blue-700 rounded-lg p-4 mb-4 shadow-md text-sm sm:text-base" id="warning-msg">
+  <div class="flex items-center justify-between items-center">
+    <h2><i class="uil uil-info-circle text-xl"></i> <strong>This is a test environment.</strong></h2>
     <button onclick="closeWarning()">
       <i class="uil uil-times text-xl"></i>
     </button>
   </div>
-  <hr class="border-red-200 my-2 w-full">
-  <p>This is a test environment. Be aware that creating a task will make it public to anyone with access to this site. It's currently possible to delete any task (including other people's) by clicking on "Delete", so use it wisely. We're working on other improvements, <a href="https://github.com/reenatoteixeira/just-another-todo-list/tree/stage" target="_blank" class="underline">click here</a> to check our GitHub repository. Thanks!</p>
+  <hr class="border-blue-200 my-2 w-full">
+  <p> Here's what you can do from here:</p>
+  <ul class="list-disc ml-6 my-2">
+    <li>
+      <b>Create</b> a new task by clicking on "New task"
+    </li>
+    <li>
+      <b>Delete</b> any task (including other people's) by clicking on "Delete"
+    </li>
+    <li>
+      <b>Edit</b> any task (including other people's) by clicking on "Edit"
+    </li>
+    <li>
+      <b>Finish</b> any task (including other people's) by clicking on "Mark as done"
+    </li>
+  </ul>
+  <p>We're working on future improvements, <a href="https://github.com/reenatoteixeira/just-another-todo-list/tree/stage" target="_blank" class="underline">click here</a> to check our GitHub repository. Thanks!</p>
 </div>
 
 <?php if (count($tasks) === 0) : ?>
