@@ -9,5 +9,6 @@ CREATE TABLE table_name (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(125) NOT NULL,
     description VARCHAR(255),
-    completed INT(1) NOT NULL DEFAULT 0,
+    completed INT(1) DEFAULT 0,
+    deleted INT(1) DEFAULT 0
 );
