@@ -1,6 +1,6 @@
 <?php
-require_once(__DIR__ . '/new-task.php');
-require_once(__DIR__ . '/edit-task.php');
+require_once(__DIR__ . '/new-task.modal.php');
+require_once(__DIR__ . '/edit-task.modal.php');
 ?>
 </div>
 </main>

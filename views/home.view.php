@@ -61,13 +61,13 @@ $tasks = $taskDAO->read(0, 0);
       <div class="bg-amber-300 p-2 rounded-b-lg">
         <div class="flex justify-between">
           <div>
-            <?php require(__DIR__ . '/partials/complete-button.php') ?>
+            <?php require(__DIR__ . '/partials/mark-done.button.php') ?>
           </div>
 
           <div class="flex">
             <?php
-            require(__DIR__ . '/partials/edit-button.php');
-            require(__DIR__ . '/partials/delete-button.php');
+            require(__DIR__ . '/partials/edit.button.php');
+            require(__DIR__ . '/partials/delete.button.php');
             ?>
           </div>
         </div>
