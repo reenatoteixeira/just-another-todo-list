@@ -46,10 +46,7 @@ $tasks = $taskDAO->read(1, 0);
       <div class="bg-amber-300 p-2 rounded-b-lg">
         <div class="flex justify-end">
           <div class="flex">
-            <?php
-            require(__DIR__ . '/partials/edit-button.php');
-            require(__DIR__ . '/partials/delete-button.php');
-            ?>
+            <?php require(__DIR__ . '/partials/delete-button.php'); ?>
           </div>
         </div>
       </div>
