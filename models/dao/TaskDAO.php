@@ -10,7 +10,7 @@ class TaskDAO implements TaskInterface
     $this->pdo = $pdo;
   }
 
-  public function create(Task $task)
+  public function create(Task $task): void
   {
     $taskTitle = $task->getTitle();
     $taskDescription = $task->getDescription();
@@ -20,7 +20,7 @@ class TaskDAO implements TaskInterface
     $stmt->execute();
   }
 
-  public function read($completed, $deleted)
+  public function read(int $completed, int $deleted): array
   {
     $tasks = [];
     $stmt = $this->pdo->prepare("SELECT * FROM tasks WHERE completed = :completed AND deleted = :deleted ORDER BY id DESC");
@@ -40,7 +40,7 @@ class TaskDAO implements TaskInterface
     return $tasks;
   }
 
-  public function update(Task $task)
+  public function update(Task $task): void
   {
     $taskTitle = $task->getTitle();
     $taskDescription = $task->getDescription();
@@ -54,7 +54,7 @@ class TaskDAO implements TaskInterface
     $stmt->execute();
   }
 
-  public function delete(Task $task)
+  public function delete(Task $task): void
   {
     $taskId = $task->getID();
     $taskDeleted = $task->getDeleted();
