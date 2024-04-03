@@ -36,5 +36,13 @@ if (!empty($data)) {
 
     $taskDAO->complete($completedTask);
     header("Location: /");
+  } else if ($data['type'] === 'edit') {
+    $editedTask = new Task();
+    $editedTask->setID((int)$data['id']);
+    $editedTask->setTitle($data['title']);
+    $editedTask->setDescription($data['description']);
+
+    $taskDAO->edit($editedTask);
+    header("Location: /");
   }
 }

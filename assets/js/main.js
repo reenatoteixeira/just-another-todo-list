@@ -41,6 +41,21 @@ function closeNewTaskModalOnClick() {
   });
 }
 
+function openEditTaskModal(button) {
+  const editTaskModal = document.getElementById("edit-task-modal"),
+    taskTitle = button.getAttribute("task-title"),
+    taskDescription = button.getAttribute("task-description"),
+    taskId = button.getAttribute("task-id"),
+    editId = document.getElementById("edit-id"),
+    editTitle = document.getElementById("edit-title"),
+    editDescription = document.getElementById("edit-description");
+
+  editTaskModal.showModal();
+  editId.value = taskId;
+  editTitle.value = taskTitle;
+  editDescription.value = taskDescription;
+}
+
 function main() {
   closeNewTaskModalOnClick();
 }
