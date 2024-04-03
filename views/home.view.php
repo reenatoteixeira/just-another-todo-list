@@ -46,36 +46,14 @@ $tasks = $taskDAO->read(0, 0);
       <div class="bg-amber-300 p-2 rounded-b-lg">
         <div class="flex justify-between">
           <div>
-            <form action="/config/process.php" method="post">
-              <input type="hidden" name="type" value="complete">
-              <input type="hidden" name="id" value="<?= $task->getID() ?>">
-              <input type="hidden" name="title" value="<?= $task->getTitle() ?>">
-              <input type="hidden" name="description" value="<?= $task->getDescription() ?>">
-              <input type="hidden" name="complete" value="1">
-              <button type="submit" class="rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 disabled:bg-amber-500 disabled:text-amber-200">
-                <i class="uil uil-check-circle"></i>
-                <span class="font-semibold">Mark as done</span>
-              </button>
-            </form>
+            <?php require(__DIR__ . '/partials/complete-button.php') ?>
           </div>
 
           <div class="flex">
-            <form action="/config/process.php" method="post">
-              <input type="hidden" name="type" value="edit">
-              <input type="hidden" name="id" value="<?= $task->getID() ?>">
-              <button disabled type="submit" class="ml-2 rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 disabled:bg-amber-500 disabled:text-amber-200">
-                <i class="uil uil-edit"></i>
-              </button>
-            </form>
-
-            <form action="/config/process.php" method="post">
-              <input type="hidden" name="type" value="delete">
-              <input type="hidden" name="id" value="<?= $task->getID() ?>">
-              <input type="hidden" name="deleted" value="1">
-              <button type="submit" class="ml-2 rounded-md bg-amber-600 px-3 py-2 text-white shadow-sm hover:bg-amber-500 disabled:bg-amber-500 disabled:text-amber-200">
-                <i class="uil uil-trash-alt"></i>
-              </button>
-            </form>
+            <?php
+            require(__DIR__ . '/partials/edit-button.php');
+            require(__DIR__ . '/partials/delete-button.php');
+            ?>
           </div>
         </div>
       </div>
