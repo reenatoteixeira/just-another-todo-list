@@ -21,9 +21,9 @@ if (!empty($data)) {
     $taskDAO->delete($deletedTask);
     $actualPage = $data['heading'];
 
-    if ($actualPage === 'To-do tasks') {
+    if ($actualPage === 'To-do') {
       header("Location: /");
-    } else if ($actualPage === 'Done tasks') {
+    } else if ($actualPage === 'Done') {
       header("Location: /done");
     }
   } else if ($data['type'] === 'complete') {
