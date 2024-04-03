@@ -62,6 +62,7 @@ interface TaskInterface
 {
   public function create(Task $task);
   public function read(int $completed, int $deleted);
-  public function update(Task $task);
+  public function edit(Task $task);
+  public function complete(Task $task);
   public function delete(Task $task);
 }
