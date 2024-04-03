@@ -1,3 +1,4 @@
+<?php require_once(__DIR__ . '/new-task.php') ?>
 </div>
 </main>
 </div>
