@@ -55,8 +55,6 @@ $tasks = $taskDAO->read(1, 0);
       </div>
     </div>
   <?php endforeach; ?>
-
-  <?php require_once(__DIR__ . '/partials/dialog.php'); ?>
 </section>
 
 <?php require_once(__DIR__ . '/partials/footer.php'); ?>
