@@ -1,4 +1,7 @@
-<?php require_once(__DIR__ . '/new-task.php') ?>
+<?php
+require_once(__DIR__ . '/new-task.php');
+require_once(__DIR__ . '/edit-task.php');
+?>
 </div>
 </main>
 </div>
