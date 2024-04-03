@@ -7,7 +7,7 @@ $taskDAO = new TaskDAO($pdo);
 $tasks = $taskDAO->read(0, 0);
 ?>
 
-<div class="flex flex-col bg-blue-50 text-blue-700 rounded-lg p-4 mb-4 shadow-md text-sm sm:text-base" id="warning-msg">
+<div class="flex flex-col bg-blue-100 text-blue-600 rounded-lg p-4 mb-4 shadow-md text-sm sm:text-base" id="warning-msg">
   <div class="flex items-center justify-between items-center">
     <h2><i class="uil uil-info-circle text-xl"></i> <strong>This is a test environment.</strong></h2>
     <button onclick="closeWarning()">
