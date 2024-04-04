@@ -12,7 +12,7 @@ function mobileMenuToggle() {
 
 function closeWarning() {
   const warningMsg = document.getElementById("warning-msg");
-  
+
   warningMsg.classList.add("hidden");
 }
 
@@ -56,8 +56,29 @@ function openEditTaskModal(button) {
   editDescription.value = taskDescription;
 }
 
+function closeEditTaskModal() {
+  const editTaskModal = document.getElementById("edit-task-modal");
+  editTaskModal.close();
+}
+
+function closeEditTaskModalOnClick() {
+  const editTaskModal = document.getElementById("edit-task-modal");
+  editTaskModal.addEventListener("click", (e) => {
+    const dialogDimensions = editTaskModal.getBoundingClientRect();
+    if (
+      e.clientX < dialogDimensions.left ||
+      e.clientX > dialogDimensions.right ||
+      e.clientY < dialogDimensions.top ||
+      e.clientY > dialogDimensions.bottom
+    ) {
+      editTaskModal.close();
+    }
+  });
+}
+
 function main() {
   closeNewTaskModalOnClick();
+  closeEditTaskModalOnClick();
 }
 
 main();
