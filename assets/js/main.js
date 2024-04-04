@@ -21,16 +21,7 @@ function openModal(button) {
     modal = document.getElementById(modalId);
 
   if (modalId === "edit-task-modal") {
-    const taskTitle = button.getAttribute("task-title"),
-      taskDescription = button.getAttribute("task-description"),
-      taskId = button.getAttribute("task-id"),
-      editId = document.getElementById("edit-id"),
-      editTitle = document.getElementById("edit-title"),
-      editDescription = document.getElementById("edit-description");
-
-    editId.value = taskId;
-    editTitle.value = taskTitle;
-    editDescription.value = taskDescription;
+    fillEditTaskModal(button);
   }
 
   modal.showModal();
@@ -54,4 +45,17 @@ function closeOnOutsideClick(modal) {
       modal.close();
     }
   });
+}
+
+function fillEditTaskModal(button) {
+  const taskTitle = button.getAttribute("task-title"),
+    taskDescription = button.getAttribute("task-description"),
+    taskId = button.getAttribute("task-id"),
+    editId = document.getElementById("edit-id"),
+    editTitle = document.getElementById("edit-title"),
+    editDescription = document.getElementById("edit-description");
+
+  editId.value = taskId;
+  editTitle.value = taskTitle;
+  editDescription.value = taskDescription;
 }
