@@ -34,6 +34,7 @@ function openModal(button) {
   }
 
   modal.showModal();
+  closeOnOutsideClick(modal);
 }
 
 function closeModal(modalId) {
@@ -41,37 +42,16 @@ function closeModal(modalId) {
   modal.close();
 }
 
-function closeModalOnOutsideClick() {
-  const newTaskModal = document.getElementById("create-task-modal");
-  const editTaskModal = document.getElementById("edit-task-modal");
-
-  newTaskModal.addEventListener("click", (e) => {
-    const dialogDimensions = newTaskModal.getBoundingClientRect();
+function closeOnOutsideClick(modal) {
+  modal.addEventListener("click", (e) => {
+    const dialogDimensions = modal.getBoundingClientRect();
     if (
       e.clientX < dialogDimensions.left ||
       e.clientX > dialogDimensions.right ||
       e.clientY < dialogDimensions.top ||
       e.clientY > dialogDimensions.bottom
     ) {
-      newTaskModal.close();
-    }
-  });
-
-  editTaskModal.addEventListener("click", (e) => {
-    const dialogDimensions = editTaskModal.getBoundingClientRect();
-    if (
-      e.clientX < dialogDimensions.left ||
-      e.clientX > dialogDimensions.right ||
-      e.clientY < dialogDimensions.top ||
-      e.clientY > dialogDimensions.bottom
-    ) {
-      editTaskModal.close();
+      modal.close();
     }
   });
 }
-
-function main() {
-  closeModalOnOutsideClick();
-}
-
-main();
