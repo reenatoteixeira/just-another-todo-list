@@ -16,67 +16,46 @@ function closeWarning() {
   warningMsg.classList.add("hidden");
 }
 
-function openNewTaskModal() {
-  const newTaskModal = document.getElementById("create-task-modal");
-  newTaskModal.showModal();
+function openModal(button) {
+  const modalId = button.getAttribute("modal-id"),
+    modal = document.getElementById(modalId);
+
+  if (modalId === "edit-task-modal") {
+    fillEditTaskModal(button);
+  }
+
+  modal.showModal();
+  closeOnOutsideClick(modal);
 }
 
-function closeNewTaskModal() {
-  const newTaskModal = document.getElementById("create-task-modal");
-  newTaskModal.close();
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  modal.close();
 }
 
-function openEditTaskModal(button) {
-  const editTaskModal = document.getElementById("edit-task-modal"),
-    taskTitle = button.getAttribute("task-title"),
+function closeOnOutsideClick(modal) {
+  modal.addEventListener("click", (e) => {
+    const dialogDimensions = modal.getBoundingClientRect();
+    if (
+      e.clientX < dialogDimensions.left ||
+      e.clientX > dialogDimensions.right ||
+      e.clientY < dialogDimensions.top ||
+      e.clientY > dialogDimensions.bottom
+    ) {
+      modal.close();
+    }
+  });
+}
+
+function fillEditTaskModal(button) {
+  const taskTitle = button.getAttribute("task-title"),
     taskDescription = button.getAttribute("task-description"),
     taskId = button.getAttribute("task-id"),
     editId = document.getElementById("edit-id"),
     editTitle = document.getElementById("edit-title"),
     editDescription = document.getElementById("edit-description");
 
-  editTaskModal.showModal();
   editId.value = taskId;
   editTitle.value = taskTitle;
   editDescription.value = taskDescription;
 }
-
-function closeEditTaskModal() {
-  const editTaskModal = document.getElementById("edit-task-modal");
-  editTaskModal.close();
-}
-
-function closeModalOnOutsideClick() {
-  const newTaskModal = document.getElementById("create-task-modal");
-  const editTaskModal = document.getElementById("edit-task-modal");
-
-  newTaskModal.addEventListener("click", (e) => {
-    const dialogDimensions = newTaskModal.getBoundingClientRect();
-    if (
-      e.clientX < dialogDimensions.left ||
-      e.clientX > dialogDimensions.right ||
-      e.clientY < dialogDimensions.top ||
-      e.clientY > dialogDimensions.bottom
-    ) {
-      newTaskModal.close();
-    }
-  });
-
-  editTaskModal.addEventListener("click", (e) => {
-    const dialogDimensions = editTaskModal.getBoundingClientRect();
-    if (
-      e.clientX < dialogDimensions.left ||
-      e.clientX > dialogDimensions.right ||
-      e.clientY < dialogDimensions.top ||
-      e.clientY > dialogDimensions.bottom
-    ) {
-      editTaskModal.close();
-    }
-  });
-}
-
-function main() {
-  closeModalOnOutsideClick();
-}
-
-main();
