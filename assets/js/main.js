@@ -36,14 +36,9 @@ function openModal(button) {
   modal.showModal();
 }
 
-function closeNewTaskModal() {
-  const newTaskModal = document.getElementById("create-task-modal");
-  newTaskModal.close();
-}
-
-function closeEditTaskModal() {
-  const editTaskModal = document.getElementById("edit-task-modal");
-  editTaskModal.close();
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  modal.close();
 }
 
 function closeModalOnOutsideClick() {
