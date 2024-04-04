@@ -16,29 +16,29 @@ function closeWarning() {
   warningMsg.classList.add("hidden");
 }
 
-function openNewTaskModal() {
-  const newTaskModal = document.getElementById("create-task-modal");
-  newTaskModal.showModal();
+function openModal(button) {
+  const modalId = button.getAttribute("modal-id"),
+    modal = document.getElementById(modalId);
+
+  if (modalId === "edit-task-modal") {
+    const taskTitle = button.getAttribute("task-title"),
+      taskDescription = button.getAttribute("task-description"),
+      taskId = button.getAttribute("task-id"),
+      editId = document.getElementById("edit-id"),
+      editTitle = document.getElementById("edit-title"),
+      editDescription = document.getElementById("edit-description");
+
+    editId.value = taskId;
+    editTitle.value = taskTitle;
+    editDescription.value = taskDescription;
+  }
+
+  modal.showModal();
 }
 
 function closeNewTaskModal() {
   const newTaskModal = document.getElementById("create-task-modal");
   newTaskModal.close();
-}
-
-function openEditTaskModal(button) {
-  const editTaskModal = document.getElementById("edit-task-modal"),
-    taskTitle = button.getAttribute("task-title"),
-    taskDescription = button.getAttribute("task-description"),
-    taskId = button.getAttribute("task-id"),
-    editId = document.getElementById("edit-id"),
-    editTitle = document.getElementById("edit-title"),
-    editDescription = document.getElementById("edit-description");
-
-  editTaskModal.showModal();
-  editId.value = taskId;
-  editTitle.value = taskTitle;
-  editDescription.value = taskDescription;
 }
 
 function closeEditTaskModal() {
