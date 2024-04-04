@@ -26,21 +26,6 @@ function closeNewTaskModal() {
   newTaskModal.close();
 }
 
-function closeNewTaskModalOnClick() {
-  const newTaskModal = document.getElementById("create-task-modal");
-  newTaskModal.addEventListener("click", (e) => {
-    const dialogDimensions = newTaskModal.getBoundingClientRect();
-    if (
-      e.clientX < dialogDimensions.left ||
-      e.clientX > dialogDimensions.right ||
-      e.clientY < dialogDimensions.top ||
-      e.clientY > dialogDimensions.bottom
-    ) {
-      newTaskModal.close();
-    }
-  });
-}
-
 function openEditTaskModal(button) {
   const editTaskModal = document.getElementById("edit-task-modal"),
     taskTitle = button.getAttribute("task-title"),
@@ -61,8 +46,22 @@ function closeEditTaskModal() {
   editTaskModal.close();
 }
 
-function closeEditTaskModalOnClick() {
+function closeModalOnOutsideClick() {
+  const newTaskModal = document.getElementById("create-task-modal");
   const editTaskModal = document.getElementById("edit-task-modal");
+
+  newTaskModal.addEventListener("click", (e) => {
+    const dialogDimensions = newTaskModal.getBoundingClientRect();
+    if (
+      e.clientX < dialogDimensions.left ||
+      e.clientX > dialogDimensions.right ||
+      e.clientY < dialogDimensions.top ||
+      e.clientY > dialogDimensions.bottom
+    ) {
+      newTaskModal.close();
+    }
+  });
+
   editTaskModal.addEventListener("click", (e) => {
     const dialogDimensions = editTaskModal.getBoundingClientRect();
     if (
@@ -77,8 +76,7 @@ function closeEditTaskModalOnClick() {
 }
 
 function main() {
-  closeNewTaskModalOnClick();
-  closeEditTaskModalOnClick();
+  closeModalOnOutsideClick();
 }
 
 main();
