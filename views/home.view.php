@@ -14,6 +14,7 @@ $tasks = $taskDAO->read(0, 0);
       <i class="uil uil-times text-xl"></i>
     </button>
   </div>
+
   <hr class="border-blue-200 my-2 w-full">
   <p> Here's what you can do from here:</p>
   <ul class="list-disc ml-6 my-2">
@@ -30,6 +31,7 @@ $tasks = $taskDAO->read(0, 0);
       <b>Finish</b> any task (including other people's) by clicking on "Mark as done"
     </li>
   </ul>
+
   <p>We're working on future improvements, <a href="https://github.com/reenatoteixeira/just-another-todo-list/tree/stage" target="_blank" class="underline">click here</a> to check our GitHub repository. Thanks!</p>
 </div>
 
@@ -38,8 +40,12 @@ $tasks = $taskDAO->read(0, 0);
     <div class="border-gray-300 border-2 rounded-lg border-dashed w-full py-32 px-4">
       <div class="m-auto col-span-3 flex flex-col items-center justify-center">
         <i class="uil uil-file-plus text-4xl text-gray-400"></i>
-        <h3 class="font-semibold">No tasks</h3>
-        <p class="text-gray-400">Get started by creating a new task.</p>
+        <h3 class="font-semibold">
+          No tasks
+        </h3>
+        <p class="text-gray-400">
+          Get started by creating a new task.
+        </p>
       </div>
     </div>
   </section>
@@ -50,8 +56,11 @@ $tasks = $taskDAO->read(0, 0);
     <div class="bg-amber-200 shadow-lg rounded-lg flex flex-col justify-between">
       <div class="p-4">
         <div>
-          <h2 class="font-bold"><?= $task->getTitle() ?></h2>
+          <h2 class="font-bold">
+            <?= $task->getTitle() ?>
+          </h2>
         </div>
+
         <?php if (!empty($task->getDescription())) : ?>
           <hr class="border-amber-300 my-2">
           <p><?= $task->getDescription() ?></p>

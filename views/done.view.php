@@ -12,8 +12,12 @@ $tasks = $taskDAO->read(1, 0);
     <div class="border-gray-300 border-2 rounded-lg border-dashed w-full py-32 px-4">
       <div class="m-auto col-span-3 flex flex-col items-center justify-center">
         <i class="uil uil-file-plus text-4xl text-gray-400"></i>
-        <h3 class="font-semibold">No tasks</h3>
-        <p class="text-gray-400">Get started by completing a task.</p>
+        <h3 class="font-semibold">
+          No tasks
+        </h3>
+        <p class="text-gray-400">
+          Get started by completing a task.
+        </p>
       </div>
     </div>
   </section>
@@ -24,8 +28,11 @@ $tasks = $taskDAO->read(1, 0);
     <div class="bg-amber-200 shadow-lg rounded-lg flex flex-col justify-between">
       <div class="p-4">
         <div>
-          <h2 class="font-bold"><?= $task->getTitle() ?></h2>
+          <h2 class="font-bold">
+            <?= $task->getTitle() ?>
+          </h2>
         </div>
+
         <?php if (!empty($task->getDescription())) : ?>
           <hr class="border-amber-300 my-2">
           <p><?= $task->getDescription() ?></p>
