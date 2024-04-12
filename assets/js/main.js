@@ -7,7 +7,6 @@ function mobileMenuToggle() {
   mobMenuOpen.classList.toggle("hidden");
   mobMenuClose.classList.toggle("hidden");
   mobMenu.classList.toggle("hidden");
-  navMenu.classList.toggle("rounded-b-lg");
 }
 
 function closeWarning() {
