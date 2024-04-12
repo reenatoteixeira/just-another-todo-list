@@ -13,19 +13,27 @@
 <body class="h-full">
   <nav class="bg-gray-800 fixed top-0 h-16 w-full z-10" id="nav-menu">
     <div class="max-w-7xl mx-auto h-full px-4 flex items-center justify-between sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between">
-        <div>
-          <a href="/" class="flex items-center text-white font-bold sm:text-lg">
-            <img class="h-8 w-8 sm:h-10 sm:w-10" src="/assets/img/check.svg" alt="JATL logo"> JATL
-          </a>
+      <div class="w-full flex items-center justify-between">
+        <div class="flex items-center">
+          <div>
+            <a href="/" class="flex items-center text-white font-bold sm:text-lg">
+              <img class="h-8 w-8 sm:h-10 sm:w-10" src="/assets/img/check.svg" alt="JATL logo"> JATL
+            </a>
+          </div>
+
+          <div class="hidden ml-10 flex items-center space-x-4 md:block ">
+            <a href="/" class="<?= checkUrl('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md px-3 py-2 text-sm font-medium md:text-base" aria-current="page">To-do</a>
+
+            <a href="/done" class="<?= checkUrl('/done') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md px-3 py-2 text-sm font-medium md:text-base">Done</a>
+
+            <a href="/about" class="<?= checkUrl('/about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md px-3 py-2 text-sm font-medium md:text-base">About us</a>
+          </div>
         </div>
 
-        <div class="hidden ml-10 flex items-center space-x-4 md:block ">
-          <a href="/" class="<?= checkUrl('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md px-3 py-2 text-sm font-medium md:text-base" aria-current="page">To-do</a>
-
-          <a href="/done" class="<?= checkUrl('/done') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md px-3 py-2 text-sm font-medium md:text-base">Done</a>
-
-          <a href="/about" class="<?= checkUrl('/about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md px-3 py-2 text-sm font-medium md:text-base">About us</a>
+        <div class="hidden flex space-x-2 md:block">
+          <a href="/login" class="rounded-md bg-indigo-600 px-12 py-2 text-sm font-semibold text-white text-center shadow-sm hover:bg-indigo-500 md:text-base">
+            <button>Login</button>
+          </a>
         </div>
       </div>
 
@@ -46,6 +54,16 @@
         <a href="/done" class="<?= checkUrl('/done') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> block rounded-md px-3 py-2 text-base font-medium">Done</a>
 
         <a href="/about" class="<?= checkUrl('/about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> block rounded-md px-3 py-2 text-base font-medium">About us</a>
+      </div>
+
+      <hr class="border-gray-700">
+
+      <div class="px-2 pb-3 pt-2 sm:px-3">
+        <div class="flex flex-col items-center justify-center sm:flex-row sm:space-y-0 sm:justify-center sm:space-x-2">
+          <a href="/login" class="inline-flex w-11/12 justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 sm:w-2/4">
+            <button>Login</button>
+          </a>
+        </div>
       </div>
     </div>
   </nav>
