@@ -60,11 +60,11 @@
 
       <div class="px-2 pb-3 pt-2 sm:px-3">
         <div class="flex flex-col items-center justify-center sm:flex-row sm:space-y-0 sm:justify-center sm:space-x-2">
-          <a href="/login" class="inline-flex w-11/12 justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 sm:w-2/4">
+          <a href="/login" class="w-11/12 justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm text-center font-semibold text-white shadow-sm hover:bg-indigo-500 sm:w-2/4">
             <button>Login</button>
           </a>
 
-          <hr class="border-gray-700 w-3/4 mx-auto">
+          <hr class="border-gray-700 w-3/4 my-2">
 
           <a href="/register" class="w-11/12 justify-center rounded-md bg-white px-3 py-2 text-sm text-center font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
             Register
