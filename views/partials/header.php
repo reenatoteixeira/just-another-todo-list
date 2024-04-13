@@ -34,6 +34,10 @@
           <a href="/login" class="rounded-md bg-indigo-600 px-12 py-2 text-sm font-semibold text-white text-center shadow-sm hover:bg-indigo-500 md:text-base">
             <button>Login</button>
           </a>
+
+          <a href="/register" class="rounded-md bg-white px-3 py-2 text-base font-semibold text-gray-900 text-center shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-100">
+            <button>Register</button>
+          </a>
         </div>
       </div>
 
