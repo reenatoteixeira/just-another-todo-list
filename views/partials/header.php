@@ -31,7 +31,7 @@
         </div>
 
         <div class="hidden flex space-x-2 md:block">
-          <a href="/login" class="rounded-md bg-indigo-600 px-12 py-2 text-sm font-semibold text-white text-center shadow-sm hover:bg-indigo-500 md:text-base">
+          <a href="/login" class="rounded-md bg-indigo-600 px-12 py-2 text-base font-semibold text-white text-center shadow-sm hover:bg-indigo-500">
             <button>Login</button>
           </a>
 
