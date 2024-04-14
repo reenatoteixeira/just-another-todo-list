@@ -1,3 +1,3 @@
 <?php
 $heading = 'Done';
-require_once(__DIR__ . '/../views/done.view.php');
+require_once(__DIR__ . '/../views/view.done.php');

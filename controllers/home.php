@@ -1,3 +1,3 @@
 <?php
 $heading = 'To-do';
-require_once(__DIR__ . '/../views/home.view.php');
+require_once(__DIR__ . '/../views/view.home.php');
