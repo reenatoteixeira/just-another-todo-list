@@ -1,7 +1,7 @@
 <?php
 require_once(__DIR__ . '/../config/database.php');
 require_once(__DIR__ . '/../models/dao/TaskDAO.php');
-require_once(__DIR__ . '/partials/header.php');
+require_once(__DIR__ . '/partials/template.header.php');
 
 $taskDAO = new TaskDAO($pdo);
 $tasks = $taskDAO->read(0, 0);
@@ -70,13 +70,13 @@ $tasks = $taskDAO->read(0, 0);
       <div class="bg-amber-300 p-2 rounded-b-lg">
         <div class="flex justify-between">
           <div>
-            <?php require(__DIR__ . '/partials/mark-done.button.php') ?>
+            <?php require(__DIR__ . '/partials/button.mark-done.php') ?>
           </div>
 
           <div class="flex">
             <?php
-            require(__DIR__ . '/partials/edit.button.php');
-            require(__DIR__ . '/partials/delete.button.php');
+            require(__DIR__ . '/partials/button.edit.php');
+            require(__DIR__ . '/partials/button.delete.php');
             ?>
           </div>
         </div>
@@ -85,4 +85,4 @@ $tasks = $taskDAO->read(0, 0);
   <?php endforeach; ?>
 </section>
 
-<?php require_once(__DIR__ . '/partials/footer.php'); ?>
+<?php require_once(__DIR__ . '/partials/template.footer.php'); ?>
