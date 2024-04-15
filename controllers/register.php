@@ -1,3 +1,3 @@
 <?php
 $heading = 'Register';
-require_once(__DIR__ . '/../views/register.view.php');
+require_once(__DIR__ . '/../views/view.register.php');

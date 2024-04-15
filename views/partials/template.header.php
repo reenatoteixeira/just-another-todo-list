@@ -78,4 +78,4 @@
     </div>
   </nav>
 
-  <?php require_once(__DIR__ . '/heading.php') ?>
+  <?php require_once(__DIR__ . '/template.heading.php') ?>
