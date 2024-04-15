@@ -28,19 +28,24 @@ function openModal(button) {
 }
 
 function closeModal(modalId) {
-  const modal = document.getElementById(modalId);
+  const modal = document.getElementById(modalId),
+    form = modal.querySelector("form");
+
+  form.reset();
   modal.close();
 }
 
 function closeOnOutsideClick(modal) {
   modal.addEventListener("click", (e) => {
-    const dialogDimensions = modal.getBoundingClientRect();
+    const dialogDimensions = modal.getBoundingClientRect(),
+      form = modal.querySelector("form");
     if (
       e.clientX < dialogDimensions.left ||
       e.clientX > dialogDimensions.right ||
       e.clientY < dialogDimensions.top ||
       e.clientY > dialogDimensions.bottom
     ) {
+      form.reset();
       modal.close();
     }
   });
