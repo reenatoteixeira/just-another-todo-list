@@ -19,8 +19,8 @@ function openModal(button) {
   const modalId = button.getAttribute("modal-id"),
     modal = document.getElementById(modalId);
 
-  if (modalId === "edit-task-modal") {
-    fillEditTaskModal(button);
+  if (modalId != "new-task-modal") {
+    fillModal(button);
   }
 
   modal.showModal();
@@ -46,15 +46,19 @@ function closeOnOutsideClick(modal) {
   });
 }
 
-function fillEditTaskModal(button) {
-  const taskTitle = button.getAttribute("task-title"),
+function fillModal(button) {
+  const taskId = button.getAttribute("task-id"),
+    taskTitle = button.getAttribute("task-title"),
     taskDescription = button.getAttribute("task-description"),
-    taskId = button.getAttribute("task-id"),
-    editId = document.getElementById("edit-id"),
-    editTitle = document.getElementById("edit-title"),
-    editDescription = document.getElementById("edit-description");
+    modalId = button.getAttribute("modal-id"),
+    idField = document.getElementById(`${modalId}-task-id`),
+    titleField = document.getElementById(`${modalId}-task-title`),
+    descriptionField = document.getElementById(`${modalId}-task-description`);
 
-  editId.value = taskId;
-  editTitle.value = taskTitle;
-  editDescription.value = taskDescription;
+  idField.value = taskId;
+
+  if (modalId === "edit-task-modal") {
+    titleField.value = taskTitle;
+    descriptionField.value = taskDescription;
+  }
 }

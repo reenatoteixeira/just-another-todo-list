@@ -18,7 +18,7 @@ if (!empty($data)) {
     header("Location: /");
   } else if ($data['type'] === 'delete') {
     $deletedTask = new Task();
-    $deletedTask->setID($data['id']);
+    $deletedTask->setID((int)$data['id']);
     $deletedTask->setDeleted($data['deleted']);
 
     $taskDAO->delete($deletedTask);

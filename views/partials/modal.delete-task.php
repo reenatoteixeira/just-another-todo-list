@@ -17,7 +17,7 @@
 
   <form action="/config/process.php" method="POST">
     <input type="hidden" name="type" value="delete">
-    <input type="hidden" name="id" value="<?= $task->getID() ?>">
+    <input type="hidden" name="id" id="delete-task-modal-task-id">
     <input type="hidden" name="deleted" value="1">
     <input type="hidden" name="heading" value="<?= $heading ?>">
 
