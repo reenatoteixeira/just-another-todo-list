@@ -78,4 +78,8 @@
     </div>
   </nav>
 
-  <?php require_once(__DIR__ . '/template.heading.php') ?>
+  <?php
+  if ($heading != "Page not found") {
+    require_once(__DIR__ . '/template.heading.php');
+  }
+  ?>
