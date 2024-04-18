@@ -15,7 +15,7 @@
     </p>
   </div>
 
-  <form action="/config/process.php" method="POST">
+  <form action="/config/process.tasks.php" method="POST">
     <input type="hidden" name="type" value="create">
     <div class="px-4 mt-2">
       <label for="title" class="block text-sm font-medium leading-6 text-gray-900 md:text-base">

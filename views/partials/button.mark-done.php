@@ -1,4 +1,4 @@
-<form action="/config/process.php" method="post">
+<form action="/config/process.tasks.php" method="post">
   <input type="hidden" name="type" value="complete">
   <input type="hidden" name="id" value="<?= $task->getID() ?>">
   <input type="hidden" name="completed" value="1">

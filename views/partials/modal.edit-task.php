@@ -15,7 +15,7 @@
     </p>
   </div>
 
-  <form action="/config/process.php" method="POST">
+  <form action="/config/process.tasks.php" method="POST">
     <input type="hidden" name="type" value="edit">
     <input type="hidden" name="id" id="edit-task-modal-task-id">
 

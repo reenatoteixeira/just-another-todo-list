@@ -15,7 +15,7 @@
     </p>
   </div>
 
-  <form action="/config/process.php" method="POST">
+  <form action="/config/process.tasks.php" method="POST">
     <input type="hidden" name="type" value="delete">
     <input type="hidden" name="id" id="delete-task-modal-task-id">
     <input type="hidden" name="deleted" value="1">
