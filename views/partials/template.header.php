@@ -22,7 +22,9 @@
           </div>
 
           <div class="hidden ml-10 flex items-center space-x-4 md:block ">
-            <a href="/" class="<?= checkUrl('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md px-3 py-2 text-sm font-medium md:text-base" aria-current="page">To-do</a>
+            <a href="/" class="<?= checkUrl('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md px-3 py-2 text-sm font-medium md:text-base" aria-current="page">Home</a>
+
+            <a href="/todo" class="<?= checkUrl('/todo') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md px-3 py-2 text-sm font-medium md:text-base" aria-current="page">To-do</a>
 
             <a href="/done" class="<?= checkUrl('/done') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> rounded-md px-3 py-2 text-sm font-medium md:text-base">Done</a>
 
@@ -53,7 +55,9 @@
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="hidden md:hidden bg-gray-800 rounded-b-lg" id="mobile-menu">
       <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-        <a href="/" class="<?= checkUrl('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> block rounded-md px-3 py-2 text-base font-medium" aria-current="page">To-do</a>
+        <a href="/" class="<?= checkUrl('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
+
+        <a href="/todo" class="<?= checkUrl('/todo') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> block rounded-md px-3 py-2 text-base font-medium" aria-current="page">To-do</a>
 
         <a href="/done" class="<?= checkUrl('/done') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' ?> block rounded-md px-3 py-2 text-base font-medium">Done</a>
 

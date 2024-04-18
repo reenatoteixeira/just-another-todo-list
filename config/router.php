@@ -2,7 +2,8 @@
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 $routes = [
-  '/' => './controllers/todo.php',
+  '/' => './controllers/home.php',
+  '/todo' => './controllers/todo.php',
   '/about' => './controllers/about.php',
   '/done' => './controllers/done.php',
   '/login' => './controllers/login.php',
