@@ -12,12 +12,12 @@
 
 <body class="h-full">
   <nav class="bg-gray-800 fixed top-0 h-16 w-full z-10" id="nav-menu">
-    <div class="max-w-7xl mx-auto h-full px-4 flex items-center justify-between sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto h-full flex items-center justify-between px-4 sm:px-6 lg:px-8">
       <div class="w-full flex items-center justify-between">
         <div class="flex items-center">
           <div>
             <a href="/" class="flex items-center text-white font-bold sm:text-lg">
-              <img class="h-8 w-8 sm:h-10 sm:w-10" src="/assets/img/check.svg" alt="JATL logo"> JATL
+              <img class="h-8 sm:h-10" src="/assets/img/check.svg" alt="JATL logo"> JATL
             </a>
           </div>
 
@@ -78,8 +78,6 @@
     </div>
   </nav>
 
-  <?php
-  if ($heading != "Page not found") {
+  <?php if ($heading != "Page not found") {
     require_once(__DIR__ . '/template.heading.php');
-  }
-  ?>
+  } ?>
