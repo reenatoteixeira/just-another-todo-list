@@ -1,4 +1,4 @@
-<?php 
+<?php
 class User
 {
   private $id;
@@ -67,4 +67,18 @@ class User
   {
     $this->token = $token;
   }
+}
+
+interface UserInterface
+{
+  public function buildUser($data);
+  public function create(User $user, bool $authUser = false);
+  public function update(User $user);
+  public function setSessionToken(string $token, bool $redirect = true);
+  public function verifyToken(string $token);
+  public function authUser(string $email, string $password);
+  public function findByToken(string $token);
+  public function findByEmail(string $email);
+  public function findById(int $id);
+  public function changePassword(User $user);
 }
