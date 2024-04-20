@@ -15,7 +15,7 @@ if (!empty($data)) {
     $newTask->setDescription($taskDescription);
 
     $taskDAO->create($newTask);
-    header("Location: /");
+    header("Location: /todo");
   }
 
   if ($data['type'] === 'delete') {
@@ -26,7 +26,7 @@ if (!empty($data)) {
     $taskDAO->delete($deletedTask);
 
     if ($data['heading'] === 'To-do') {
-      header("Location: /");
+      header("Location: /todo");
     }
 
     if ($data['heading'] === 'Done') {
@@ -40,7 +40,7 @@ if (!empty($data)) {
     $completedTask->setCompleted($data['completed']);
 
     $taskDAO->complete($completedTask);
-    header("Location: /");
+    header("Location: /todo");
   }
 
   if ($data['type'] === 'edit') {
@@ -50,6 +50,6 @@ if (!empty($data)) {
     $editedTask->setDescription($data['description']);
 
     $taskDAO->edit($editedTask);
-    header("Location: /");
+    header("Location: /todo");
   }
 }
