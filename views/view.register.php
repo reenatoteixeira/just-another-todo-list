@@ -30,7 +30,7 @@
       <div>
         <label for="password" class="block text-sm font-medium leading-6 text-gray-900 md:text-base">Password</label>
         <div class="mt-2">
-          <input id="password" name="password" type="password" maxlength="25" required class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-base sm:leading-6">
+          <input id="password" name="password" type="password" minlength="6" maxlength="25" required class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-base sm:leading-6">
         </div>
       </div>
 
@@ -39,7 +39,7 @@
           <label for="check-password" class="block text-sm font-medium leading-6 text-gray-900 md:text-base">Confirm password</label>
         </div>
         <div class="mt-2">
-          <input id="check-password" name="check-password" type="password" required class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-base sm:leading-6">
+          <input id="check-password" name="check-password" type="password" minlength="6" maxlength="25" required class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-base sm:leading-6">
         </div>
       </div>
 
