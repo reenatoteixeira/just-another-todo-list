@@ -12,4 +12,4 @@
   </div>
 </header>
 
-<main class="mx-auto max-w-7xl pt-44 pb-12 px-4 sm:px-6 lg:px-8">
+<main class="mx-auto max-w-7xl pb-12 px-4 sm:px-6 lg:px-8">

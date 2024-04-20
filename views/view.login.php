@@ -1,4 +1,8 @@
-<?php require_once(__DIR__ . '/partials/template.header.php'); ?>
+<?php
+require_once(__DIR__ . '/../views/partials/template.header.php');
+require_once(__DIR__ . '/../views/partials/template.navbar.php');
+?>
+
 <div class="flex flex-col justify-center">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
     <h2 class="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
@@ -58,4 +62,5 @@
     </p>
   </div>
 </div>
+
 <?php require_once(__DIR__ . '/partials/template.footer.php'); ?>
