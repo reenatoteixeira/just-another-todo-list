@@ -71,7 +71,7 @@ class User
 
 interface UserInterface
 {
-  public function buildUser($data);
+  public function buildUser(array $data);
   public function create(User $user, bool $authUser = false);
   public function update(User $user);
   public function setSessionToken(string $token, bool $redirect = true);
