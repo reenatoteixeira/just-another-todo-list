@@ -15,6 +15,12 @@ function closeWarning() {
   warningMsg.classList.add("hidden");
 }
 
+function closeFlashMsg() {
+  const flashMsg = document.getElementById("flash-msg");
+
+  flashMsg.classList.add("hidden");
+}
+
 function openModal(button) {
   const modalId = button.getAttribute("modal-id"),
     modal = document.getElementById(modalId);
