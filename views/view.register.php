@@ -11,6 +11,7 @@ require_once(__DIR__ . '/../views/partials/template.navbar.php');
 
     <div class="bg-white mt-4 p-6 rounded-lg shadow-lg sm:mx-auto sm:w-full sm:max-w-lg">
       <form class="space-y-6" action="/config/process.users.php" method="POST">
+        <input type="hidden" name="type" value="register">
         <div>
           <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900 md:text-base">First name</label>
           <div class="mt-2">
