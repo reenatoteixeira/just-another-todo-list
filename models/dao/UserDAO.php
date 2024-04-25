@@ -58,6 +58,19 @@ class UserDAO implements UserInterface
 
   public function verifyToken(bool $protected = false)
   {
+    if (!empty($_SESSION['token'])) {
+      $token = $_SESSION['token'];
+      $user = $this->findByToken($token);
+
+      if ($user) {
+        return $user;
+      } else if ($protected) {
+        return false;
+        $this->message->setMessage('You are not logged in', 'error', '/login');
+      }
+    } else if ($protected) {
+      $this->message->setMessage('You are not logged in', 'error', '/login');
+    }
   }
 
   public function destroyToken()
