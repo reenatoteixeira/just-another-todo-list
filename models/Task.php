@@ -6,6 +6,7 @@ class Task
   private $description;
   private $completed;
   private $deleted;
+  private $user_id;
 
   public function getID(): int
   {
@@ -56,12 +57,22 @@ class Task
   {
     $this->deleted = $deleted;
   }
+
+  public function getUserId(): int
+  {
+    return $this->user_id;
+  }
+
+  public function setUserId(int $user_id): void
+  {
+    $this->user_id = $user_id;
+  }
 }
 
 interface TaskInterface
 {
   public function create(Task $task);
-  public function read(int $completed, int $deleted);
+  public function read(int $completed, int $deleted, int $userId);
   public function edit(Task $task);
   public function complete(Task $task);
   public function delete(Task $task);

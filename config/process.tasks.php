@@ -9,10 +9,12 @@ if (!empty($data)) {
   if ($data['type'] === 'create') {
     $taskTitle = $data['title'];
     $taskDescription = $data['description'];
+    $taskUser = $data['user-id'];
 
     $newTask = new Task();
     $newTask->setTitle($taskTitle);
     $newTask->setDescription($taskDescription);
+    $newTask->setUserID($taskUser);
 
     $taskDAO->create($newTask);
     header("Location: /todo");
