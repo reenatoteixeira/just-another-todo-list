@@ -1,6 +1,7 @@
 <?php
 require_once(__DIR__ . '/../../config/database.php');
 require_once(__DIR__ . '/../../models/Message.php');
+require_once(__DIR__ . '/../../models/dao/UserDAO.php');
 
 $message = new Message();
 $flashMessage = $message->getMessage();
@@ -8,6 +9,9 @@ $flashMessage = $message->getMessage();
 if (!empty($flashMessage['message'])) {
   $message->clearMessage();
 }
+
+$userDAO = new UserDAO($pdo);
+$userData = $userDAO->verifyToken();
 ?>
 
 <!DOCTYPE html>
