@@ -14,16 +14,19 @@ class TaskDAO implements TaskInterface
   {
     $taskTitle = $task->getTitle();
     $taskDescription = $task->getDescription();
-    $stmt = $this->pdo->prepare("INSERT INTO tasks (title, description) VALUES (:title, :description)");
+    $taskUser = $task->getUserID();
+    $stmt = $this->pdo->prepare("INSERT INTO tasks (title, description, user_id) VALUES (:title, :description, :user_id)");
     $stmt->bindParam(':title', $taskTitle);
     $stmt->bindParam(':description', $taskDescription);
+    $stmt->bindParam(':user_id', $taskUser);
     $stmt->execute();
   }
 
-  public function read(int $completed, int $deleted): array
+  public function read(int $completed, int $deleted, int $userId): array
   {
     $tasks = [];
-    $stmt = $this->pdo->prepare("SELECT * FROM tasks WHERE completed = :completed AND deleted = :deleted ORDER BY id DESC");
+    $stmt = $this->pdo->prepare("SELECT * FROM tasks WHERE user_id = :user_id AND completed = :completed AND deleted = :deleted ORDER BY id DESC");
+    $stmt->bindParam(':user_id', $userId);
     $stmt->bindParam(':completed', $completed);
     $stmt->bindParam(':deleted', $deleted);
     $stmt->execute();
