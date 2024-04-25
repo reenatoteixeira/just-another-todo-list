@@ -83,7 +83,7 @@ interface UserInterface
 {
   public function buildUser(array $data);
   public function create(User $user, bool $authUser = false);
-  public function update(User $user);
+  public function update(User $user, bool $reditect = true);
   public function setSessionToken(string $token, bool $redirect = true);
   public function verifyToken(bool $protected);
   public function destroyToken();
