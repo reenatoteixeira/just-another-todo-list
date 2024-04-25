@@ -83,6 +83,21 @@ class UserDAO implements UserInterface
 
   public function findByToken(string $token)
   {
+    if ($token != "") {
+      $stmt = $this->pdo->prepare("SELECT * FROM users WHERE token = :token");
+      $stmt->bindParam(':token', $token);
+      $stmt->execute();
+
+      if ($stmt->rowCount() > 0) {
+        $data = $stmt->fetch();
+        $user = $this->buildUser($data);
+        return $user;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
   }
 
   public function findByEmail(string $email)
