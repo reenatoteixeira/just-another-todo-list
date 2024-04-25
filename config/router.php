@@ -8,6 +8,8 @@ $routes = [
   '/done' => './controllers/done.php',
   '/login' => './controllers/login.php',
   '/register' => './controllers/register.php',
+  '/profile' => './controllers/profile.php',
+  '/logout' => './controllers/logout.php',
 ];
 
 routeToController($uri, $routes);
