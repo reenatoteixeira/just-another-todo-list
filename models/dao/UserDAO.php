@@ -1,14 +1,17 @@
 <?php
 
 require_once(__DIR__ . '/../User.php');
+require_once(__DIR__ . '/../Message.php');
 
 class UserDAO implements UserInterface
 {
   private $pdo;
+  private $message;
 
   public function __construct(PDO $pdo)
   {
     $this->pdo = $pdo;
+    $this->message = new Message();
   }
 
   public function buildUser(array $data): User
@@ -47,9 +50,17 @@ class UserDAO implements UserInterface
 
   public function setSessionToken(string $token, bool $redirect = true)
   {
+    $_SESSION['token'] = $token;
+    if ($redirect) {
+      $this->message->setMessage('You are now logged in', 'success', '/profile');
+    }
   }
 
-  public function verifyToken(string $token)
+  public function verifyToken(bool $protected = false)
+  {
+  }
+
+  public function destroyToken()
   {
   }
 
