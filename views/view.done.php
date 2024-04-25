@@ -6,10 +6,10 @@ require_once(__DIR__ . '/../models/dao/TaskDAO.php');
 require_once(__DIR__ . '/../models/dao/UserDAO.php');
 
 $taskDAO = new TaskDAO($pdo);
-$tasks = $taskDAO->read(1, 0);
-
 $userDAO = new UserDAO($pdo);
+
 $userData = $userDAO->verifyToken(true);
+$tasks = $taskDAO->read(1, 0, $userData->getID());
 ?>
 
 <section class="mt-44">
