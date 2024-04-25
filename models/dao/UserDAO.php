@@ -5,12 +5,10 @@ require_once(__DIR__ . '/../User.php');
 class UserDAO implements UserInterface
 {
   private $pdo;
-  private $url;
 
-  public function __construct(PDO $pdo, string $url)
+  public function __construct(PDO $pdo)
   {
     $this->pdo = $pdo;
-    $this->url = $url;
   }
 
   public function buildUser(array $data): User
@@ -51,6 +49,21 @@ class UserDAO implements UserInterface
 
   public function findByEmail(string $email)
   {
+    if ($email != "") {
+      $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");
+      $stmt->bindParam(':email', $email);
+      $stmt->execute();
+
+      if ($stmt->rowCount() > 0) {
+        $data = $stmt->fetch();
+        $user = $this->buildUser($data); 
+        return $user;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
   }
 
   public function findById(int $id)
