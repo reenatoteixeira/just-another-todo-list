@@ -44,8 +44,25 @@ class UserDAO implements UserInterface
     }
   }
 
-  public function update(User $user)
+  public function update(User $user, bool $redirect = true)
   {
+    $stmt = $this->pdo->prepare("UPDATE users SET
+    first_name = :first_name,
+    last_name = :last_name,
+    email = :email,
+    token = :token
+    WHERE id = :id");
+
+    $stmt->bindParam(':first_name', $user->getFirstName());
+    $stmt->bindParam(':last_name', $user->getLastName());
+    $stmt->bindParam(':email', $user->getEmail());
+    $stmt->bindParam(':token', $user->getToken());
+    $stmt->bindParam(':id', $user->getId());
+    $stmt->execute();
+
+    if ($redirect) {
+      $this->message->setMessage('Profile updated', 'success', '/profile');
+    }
   }
 
   public function setSessionToken(string $token, bool $redirect = true)
@@ -81,6 +98,22 @@ class UserDAO implements UserInterface
 
   public function authUser(string $email, string $password)
   {
+    $user = $this->findByEmail($email);
+
+    if ($user) {
+      if (password_verify($password, $user->getPassword())) {
+        $token = $user->generateToken();
+        $this->setSessionToken($token);
+        $user->setToken($token);
+        $this->update($user, false);
+        return true;
+
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
   }
 
   public function findByToken(string $token)
