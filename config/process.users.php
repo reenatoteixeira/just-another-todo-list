@@ -33,7 +33,6 @@ if (!empty($data)) {
           $auth = true;
 
           $userDAO->create($user, $auth);
-          
         } else {
           $message->setMessage('Email already exists', 'error', 'back');
         }
@@ -43,8 +42,16 @@ if (!empty($data)) {
     } else {
       $message->setMessage('Please fill in all fields', 'error', 'back');
     }
-  }
+  } else if ($data['type'] === 'login') {
+    $email = $data['email'];
+    $password = $data['password'];
 
-  if ($data['type'] === 'login') {
+    if ($userDAO->authUser($email, $password)) {
+      $message->setMessage('Login successful', 'success', '/profile');
+    } else {
+      $message->setMessage('Email or password is incorrect', 'error', 'back');
+    }
+  } else {
+    $message->setMessage('Invalid request', 'error', 'back');
   }
 }
