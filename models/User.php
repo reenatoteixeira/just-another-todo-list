@@ -67,15 +67,26 @@ class User
   {
     $this->token = $token;
   }
+
+  public function generateToken(): string
+  {
+    return bin2hex(random_bytes(50));
+  }
+
+  public function hashPassword(string $password): string
+  {
+    return password_hash($password, PASSWORD_DEFAULT);
+  }
 }
 
 interface UserInterface
 {
   public function buildUser(array $data);
   public function create(User $user, bool $authUser = false);
-  public function update(User $user);
+  public function update(User $user, bool $reditect = true);
   public function setSessionToken(string $token, bool $redirect = true);
-  public function verifyToken(string $token);
+  public function verifyToken(bool $protected);
+  public function destroyToken();
   public function authUser(string $email, string $password);
   public function findByToken(string $token);
   public function findByEmail(string $email);
