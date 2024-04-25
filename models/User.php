@@ -86,6 +86,7 @@ interface UserInterface
   public function update(User $user);
   public function setSessionToken(string $token, bool $redirect = true);
   public function verifyToken(bool $protected);
+  public function destroyToken();
   public function authUser(string $email, string $password);
   public function findByToken(string $token);
   public function findByEmail(string $email);
