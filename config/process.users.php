@@ -5,6 +5,7 @@ require_once(__DIR__ . '/../models/User.php');
 require_once(__DIR__ . '/../models/dao/UserDAO.php');
 
 $message = new Message();
+$userDAO = new UserDAO($pdo);
 $data = $_POST;
 
 if (!empty($data)) {
@@ -16,6 +17,29 @@ if (!empty($data)) {
     $checkPassword = $data['check-password'];
 
     if ($firstName && $lastName && $email && $password) {
+      if ($password === $checkPassword) {
+        if ($userDAO->findByEmail($email) === false) {
+          $user = new User();
+
+          $userToken = $user->generateToken();
+          $userPassword = $user->hashPassword($password);
+
+          $user->setFirstName($firstName);
+          $user->setLastName($lastName);
+          $user->setEmail($email);
+          $user->setPassword($userPassword);
+          $user->setToken($userToken);
+
+          $auth = true;
+
+          $userDAO->create($user, $auth);
+          
+        } else {
+          $message->setMessage('Email already exists', 'error', 'back');
+        }
+      } else {
+        $message->setMessage('Passwords do not match', 'error', 'back');
+      }
     } else {
       $message->setMessage('Please fill in all fields', 'error', 'back');
     }
