@@ -25,6 +25,20 @@ class UserDAO implements UserInterface
 
   public function create(User $user, bool $authUser = false)
   {
+    $stmt = $this->pdo->prepare("INSERT INTO users (
+    first_name, last_name, email, password, token
+    ) VALUES (
+    :first_name, :last_name, :email, :password, :token)");
+    $stmt->bindParam(':first_name', $user->getFirstName());
+    $stmt->bindParam(':last_name', $user->getLastName());
+    $stmt->bindParam(':email', $user->getEmail());
+    $stmt->bindParam(':password', $user->getPassword());
+    $stmt->bindParam(':token', $user->getToken());
+    $stmt->execute();
+
+    if ($authUser) {
+      $this->setSessionToken($user->getToken());
+    }
   }
 
   public function update(User $user)
@@ -56,7 +70,7 @@ class UserDAO implements UserInterface
 
       if ($stmt->rowCount() > 0) {
         $data = $stmt->fetch();
-        $user = $this->buildUser($data); 
+        $user = $this->buildUser($data);
         return $user;
       } else {
         return false;
