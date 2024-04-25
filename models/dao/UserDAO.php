@@ -75,6 +75,8 @@ class UserDAO implements UserInterface
 
   public function destroyToken()
   {
+    $_SESSION['token'] = "";
+    $this->message->setMessage('You are now logged out', 'success');
   }
 
   public function authUser(string $email, string $password)
