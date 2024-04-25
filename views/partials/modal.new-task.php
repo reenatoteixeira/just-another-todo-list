@@ -17,6 +17,7 @@
 
   <form action="/config/process.tasks.php" method="POST">
     <input type="hidden" name="type" value="create">
+    <input type="number" name="user-id" value="<?= $userData? $userData->getId() : "" ?>">
     <div class="px-4 mt-2">
       <label for="title" class="block text-sm font-medium leading-6 text-gray-900 md:text-base">
         Title
