@@ -26,15 +26,17 @@ $userData = $userDAO->verifyToken();
   <title>JATL | <?= $heading ?></title>
 </head>
 
-<body class="h-full">
-  <?php if (!empty($flashMessage['message'])) : ?>
-    <div class="<?= checkFlashMsgType($flashMessage['type']) ?> flex items-center justify-between rounded-lg p-4 mt-44 mb-4 m-auto shadow-md text-sm max-w-xl sm:text-base" id="flash-msg">
-      <h2 class="flex items-center space-x-2">
-        <i class="<?= checkFlashMsgIcon($flashMessage['type']) ?> uil text-xl"></i>
-        <span><?= $flashMessage['message'] ?></span>
-      </h2>
-      <button onclick="closeFlashMsg()">
-        <i class="uil uil-times text-xl"></i>
-      </button>
-    </div>
-  <?php endif; ?>
+<body class="min-h-screen relative">
+  <header class="bg-white w-full">
+    <?php
+    require_once(__DIR__ . '/template.navbar.php');
+
+    if ($showHeading) {
+      require_once(__DIR__ . '/template.heading.php');
+    } ?>
+  </header>
+
+  <main class="<?= $showHeading ? 'pt-40' : 'pt-24' ?> mx-auto max-w-7xl pb-24 px-4 sm:px-6 lg:px-8">
+    <?php if (!empty($flashMessage['message'])) {
+      require_once(__DIR__ . '/alert.flash-message.php');
+    } ?>
