@@ -1,7 +1,5 @@
 <?php
 require_once(__DIR__ . '/../views/partials/template.header.php');
-require_once(__DIR__ . '/../views/partials/template.navbar.php');
-require_once(__DIR__ . '/../views/partials/template.heading.php');
 require_once(__DIR__ . '/../models/dao/TaskDAO.php');
 require_once(__DIR__ . '/../models/dao/UserDAO.php');
 
@@ -12,7 +10,7 @@ $userData = $userDAO->verifyToken(true);
 $tasks = $taskDAO->read(0, 0, $userData->getID());
 ?>
 
-<section class="mt-44">
+<section>
   <?php if (count($tasks) === 0) : ?>
     <div class="flex items-center justify-center">
       <div class="border-gray-300 border-2 rounded-lg border-dashed w-full py-32 px-4">
@@ -31,7 +29,7 @@ $tasks = $taskDAO->read(0, 0, $userData->getID());
 
   <div class="m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <?php foreach ($tasks as $task) : ?>
-      <div class="bg-amber-200 shadow-lg rounded-lg flex flex-col justify-between">
+      <div class="bg-amber-200 shadow-lg rounded-lg text-ellipsis flex flex-col justify-between">
         <div class="p-4">
           <div>
             <h2 class="font-bold">
