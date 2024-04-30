@@ -1,12 +1,13 @@
 function mobileMenuToggle() {
   const mobMenuOpen = document.getElementById("mobile-menu-open"),
     mobMenuClose = document.getElementById("mobile-menu-close"),
-    mobMenu = document.getElementById("mobile-menu"),
-    navMenu = document.getElementById("nav-menu");
+    mobMenu = document.getElementById("nav-menu"),
+    navMenu = document.getElementById("nav-bar");
 
   mobMenuOpen.classList.toggle("hidden");
   mobMenuClose.classList.toggle("hidden");
   mobMenu.classList.toggle("hidden");
+  navMenu.classList.toggle("rounded-b-lg");
 }
 
 function closeWarning() {
