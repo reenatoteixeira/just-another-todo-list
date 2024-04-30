@@ -1,6 +1,5 @@
 <?php
 require_once(__DIR__ . '/../views/partials/template.header.php');
-require_once(__DIR__ . '/../views/partials/template.navbar.php');
 ?>
 <section class="text-center pt-60">
   <p class="text-base font-semibold text-indigo-600">404</p>
