@@ -15,28 +15,29 @@
     </p>
   </div>
 
-  <form action="/config/process.php" method="POST">
+  <form action="/config/process.tasks.php" method="POST">
     <input type="hidden" name="type" value="create">
+    <input type="hidden" name="user-id" value="<?= $userData ? $userData->getId() : "" ?>">
     <div class="px-4 mt-2">
-      <label for="title" class="block text-sm font-medium leading-6 text-gray-900 md:text-base">
+      <label for="title" class="block text-sm font-medium leading-6 text-gray-900">
         Title
       </label>
       <input type="text" name="title" id="title" maxlength="125" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-base" required>
     </div>
 
     <div class="px-4 mt-2 mb-4">
-      <label for="description" class="block text-sm font-medium leading-6 text-gray-900 md:text-base">
+      <label for="description" class="block text-sm font-medium leading-6 text-gray-900">
         Description
       </label>
-      <textarea name="description" id="description" rows="4" maxlength="255" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 text-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-base resize-none"></textarea>
+      <textarea name="description" id="description" rows="4" maxlength="255" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 text-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 resize-none"></textarea>
     </div>
 
-    <div class="bg-gray-50 px-4 rounded-b-lg">
-      <button type="submit" class="mt-3 inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 sm:my-3 sm:w-auto md:text-base">
+    <div class="bg-gray-50 px-4 rounded-b-lg sm:space-x-2">
+      <button type="submit" class="mt-3 inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 sm:my-3 sm:w-32">
         Create task
       </button>
 
-      <button type="reset" onclick="closeModal('new-task-modal')" class="my-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:my-0 sm:w-auto md:text-base">
+      <button type="reset" onclick="closeModal('new-task-modal')" class="my-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:my-0 sm:w-auto">
         Cancel
       </button>
     </div>

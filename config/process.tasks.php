@@ -9,40 +9,49 @@ if (!empty($data)) {
   if ($data['type'] === 'create') {
     $taskTitle = $data['title'];
     $taskDescription = $data['description'];
+    $taskUser = $data['user-id'];
 
     $newTask = new Task();
     $newTask->setTitle($taskTitle);
     $newTask->setDescription($taskDescription);
+    $newTask->setUserID($taskUser);
 
     $taskDAO->create($newTask);
-    header("Location: /");
-  } else if ($data['type'] === 'delete') {
+    header("Location: /todo");
+  }
+
+  if ($data['type'] === 'delete') {
     $deletedTask = new Task();
-    $deletedTask->setID($data['id']);
+    $deletedTask->setID((int)$data['id']);
     $deletedTask->setDeleted($data['deleted']);
 
     $taskDAO->delete($deletedTask);
 
-    $actualPage = $data['heading'];
-    if ($actualPage === 'To-do') {
-      header("Location: /");
-    } else if ($actualPage === 'Done') {
+    if ($data['heading'] === 'To-do') {
+      header("Location: /todo");
+    }
+
+    if ($data['heading'] === 'Done') {
       header("Location: /done");
     }
-  } else if ($data['type'] === 'complete') {
+  }
+
+  if ($data['type'] === 'complete') {
     $completedTask = new Task();
     $completedTask->setID($data['id']);
     $completedTask->setCompleted($data['completed']);
 
     $taskDAO->complete($completedTask);
-    header("Location: /");
-  } else if ($data['type'] === 'edit') {
+    header("Location: /todo");
+  }
+
+  if ($data['type'] === 'edit') {
     $editedTask = new Task();
     $editedTask->setID((int)$data['id']);
     $editedTask->setTitle($data['title']);
     $editedTask->setDescription($data['description']);
 
     $taskDAO->edit($editedTask);
-    header("Location: /");
+    header("Location: /todo");
   }
 }

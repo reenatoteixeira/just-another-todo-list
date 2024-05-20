@@ -1,4 +1,6 @@
 <?php
+ob_start();
+session_start();
 require_once(__DIR__ . '/../vendor/autoload.php');
 
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/..');
